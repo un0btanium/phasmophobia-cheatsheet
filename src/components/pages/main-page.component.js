@@ -31,7 +31,7 @@ export default class MainGridPage extends Component {
 			});
 
 
-			let rowStyle = { width:"100%" }
+			let rowStyle = { width:"100%", cursor:"pointer" }
 			if (this.props.selectedEvidence[evidence]) {
 				rowStyle["backgroundColor"] = "#177326";
 			}
