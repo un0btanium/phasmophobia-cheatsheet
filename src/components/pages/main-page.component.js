@@ -1,18 +1,17 @@
 import React, {Component} from 'react';
 
-import { Container, Row, Col, Form } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 
 
 export default class MainGridPage extends Component {
 	
 	render () {
 
-		let selectedColor = "grey";
-
 		let styleEvidenceHeader			= { minWidth: "400px",	textAlign: "left", margin: "5px" };
-		let styleGhostHeader			= { minWidth: "0px",	textAlign: "center", minHeight:"60px", color: selectedColor };
+		let styleGhostHeader			= { minWidth: "0px",	textAlign: "center", minHeight:"60px", color: "grey" };
 		let styleGhostHeaderSelected	= { minWidth: "0px",	textAlign: "center", minHeight:"60px", color: "white" };
-		let styleGhostDefault			= { minWidth: "0px",	textAlign: "center", margin: "5px", color: selectedColor };
+		let styleGhostHeaderResult		= { minWidth: "0px",	textAlign: "center", minHeight:"60px", color: "#05ff37" };
+		let styleGhostDefault			= { minWidth: "0px",	textAlign: "center", margin: "5px", color: "grey" };
 		let styleGhostSelected			= { minWidth: "0px",	textAlign: "center", margin: "5px", color: "white"};
 
 		// PRIMARY EVIDENCE GRID 
@@ -97,12 +96,27 @@ export default class MainGridPage extends Component {
 
 		// GHOST HEADER ROW
 		let columnHeaders = this.props.ghostNames.map((ghostName, index) => {
-			return <Col style={(this.props.selectedEvidenceAmount === 0 || this.props.selectedGhosts[ghostName]) ? styleGhostHeaderSelected : styleGhostHeader} key={"header-" + ghostName}><div className="rotated45">{ghostName}</div></Col>
+			let style = styleGhostHeader;
+			
+			if (this.props.selectedEvidenceAmount === 0 || this.props.selectedGhosts[ghostName]) {
+				style = styleGhostHeaderSelected;
+			}
+
+			if (this.props.selectedGhostAmount === 1 && this.props.selectedGhosts[ghostName]) {
+				style = styleGhostHeaderResult;
+			}
+			
+			return <Col style={style} key={"header-" + ghostName}><div className="rotated45">{ghostName}</div></Col>
 		});
 
 		return <div style={{ display: "inline-block", width: "100%", height:"100%"}}>
 			<div style={{ display: "flex", alignItems: "center", justifyContent: "center", margin: "25px 0px 15px 0px" }}>
 				<Container style={{ padding:"0", margin:"20px", maxWidth:"100000px"}}>
+					<Row>
+						<Col style={styleEvidenceHeader}>
+							<Button variant="danger" onClick={() => this.props.resetSelected()}>Unselect All Evidence</Button>
+						</Col>
+					</Row>
 					<Row style={{ width:"100%" }}>
 						<Col style={styleEvidenceHeader}>EVIDENCE</Col>
 						{columnHeaders}
@@ -119,7 +133,7 @@ export default class MainGridPage extends Component {
 						onChange={(e) => this.props.toggleSetting("showAllSecondaryEvidence")}
 					/>
 					{secondaryEvidenceGrid !== null &&
-						<Row style={{ width:"100%", marginTop: "50px" }}>
+						<Row style={{ width:"100%", marginTop: "25px" }}>
 							<Col style={styleEvidenceHeader}>SECONDARY EVIDENCE</Col>
 						</Row>
 					}
