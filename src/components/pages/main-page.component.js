@@ -7,32 +7,36 @@ export default class MainGridPage extends Component {
 	
 	render () {
 
-		let styleEvidenceHeader			= { minWidth: "400px",	textAlign: "left", margin: "5px" };
-		let styleGhostHeader			= { minWidth: "0px",	textAlign: "center", minHeight:"60px", color: "grey" };
-		let styleGhostHeaderSelected	= { minWidth: "0px",	textAlign: "center", minHeight:"60px", color: "white" };
+		let styleEvidenceHeaderDefault	= { minWidth: "400px",	textAlign: "left", margin: "5px", color: "white" };
+		let styleEvidenceHeaderGrey		= { minWidth: "400px",	textAlign: "left", margin: "5px", color: "grey" };
+
+		let styleGhostHeaderDefault		= { minWidth: "0px",	textAlign: "center", minHeight:"60px", color: "white" };
+		let styleGhostHeaderGrey		= { minWidth: "0px",	textAlign: "center", minHeight:"60px", color: "grey" };
 		let styleGhostHeaderResult		= { minWidth: "0px",	textAlign: "center", minHeight:"60px", color: "#05ff37" };
-		let styleGhostDefault			= { minWidth: "0px",	textAlign: "center", margin: "5px", color: "grey" };
-		let styleGhostSelected			= { minWidth: "0px",	textAlign: "center", margin: "5px", color: "white"};
+		
+		let styleGhostDefault			= { minWidth: "0px",	textAlign: "center", margin: "5px", color: "white"};
+		let styleGhostGrey				= { minWidth: "0px",	textAlign: "center", margin: "5px", color: "grey" };
 
 		// PRIMARY EVIDENCE GRID 
-		let grid = this.props.data.primaryevidence.map((evidence) => {
+		let grid = this.props.data.primaryevidence.map((evidence, index) => {
 
-			let rowHeader = <Col style={styleEvidenceHeader}>{evidence}</Col>;
+			let rowHeader = <Col style={this.props.remainingEvidence[evidence] ? styleEvidenceHeaderDefault : styleEvidenceHeaderGrey}>{evidence}</Col>;
 
 			let row = this.props.ghostNames.map((ghostName) => {
 				return <Col
-					style={(this.props.selectedEvidenceAmount === 0 || this.props.selectedGhosts[ghostName]) ? styleGhostSelected : styleGhostDefault}
+					style={(this.props.selectedEvidenceAmount === 0 || this.props.selectedGhosts[ghostName]) ? styleGhostDefault : styleGhostGrey}
 					key={"col-" + ghostName + "-" + evidence}
 				>
 					{this.props.ghostHasEvidence[ghostName][evidence] ? "X" : ""}
 				</Col>
-
 			});
 
 
 			let rowStyle = { width:"100%", cursor:"pointer" }
 			if (this.props.selectedEvidence[evidence]) {
 				rowStyle["backgroundColor"] = "#177326";
+			} else if (index % 2 === 0) {
+				rowStyle["backgroundColor"] = "#324254";
 			}
 
 			return <Row
@@ -48,12 +52,12 @@ export default class MainGridPage extends Component {
 
 		
 		// SECONDARY EVIDENCE GRID
+		let index = 0;
 		let secondaryEvidenceGrid = null;
 		if (this.props.selectedEvidenceAmount > 1 || this.props.selectedSecondaryEvidenceAmount > 0 || this.props.showAllSecondaryEvidence) {
 			secondaryEvidenceGrid = this.props.data.secondaryevidence.map((evidence) => {
 				let isVisible = false;
 				for (let ghostName of this.props.ghostNames) {
-					// console.log(ghostName, this.props.selectedGhosts[ghostName], this.props.ghostHasEvidence[ghostName][evidence])
 					if (this.props.selectedGhosts[ghostName] && this.props.ghostHasEvidence[ghostName][evidence]) {
 						isVisible = true;
 						break;
@@ -61,11 +65,11 @@ export default class MainGridPage extends Component {
 				}
 
 				if (isVisible || this.props.showAllSecondaryEvidence) {
-					let rowHeader = <Col style={styleEvidenceHeader}  key={"header-" + evidence}>{evidence}</Col>;
+					let rowHeader = <Col style={this.props.remainingEvidence[evidence] ? styleEvidenceHeaderDefault : styleEvidenceHeaderGrey}  key={"header-" + evidence}>{evidence}</Col>;
 		
 					let row = this.props.ghostNames.map((ghostName) => {
 						return <Col
-							style={(this.props.selectedEvidenceAmount === 0 || this.props.selectedGhosts[ghostName]) ? styleGhostSelected : styleGhostDefault}
+							style={(this.props.selectedEvidenceAmount === 0 || this.props.selectedGhosts[ghostName]) ? styleGhostDefault : styleGhostGrey}
 							key={"col-" + ghostName + "-" + evidence}
 						>
 							{this.props.ghostHasEvidence[ghostName][evidence] ? "X" : ""}
@@ -77,8 +81,11 @@ export default class MainGridPage extends Component {
 					let rowStyle = { width:"100%", cursor:"pointer" }
 					if (this.props.selectedEvidence[evidence]) {
 						rowStyle["backgroundColor"] = "#177326";
+					} else if (index % 2 === 0) {
+						rowStyle["backgroundColor"] = "#324254";
 					}
 		
+					index++;
 					return <Row
 						style={rowStyle}
 						onClick={(e) => this.props.onEvidenceClick(e, evidence)}
@@ -96,10 +103,10 @@ export default class MainGridPage extends Component {
 
 		// GHOST HEADER ROW
 		let columnHeaders = this.props.ghostNames.map((ghostName, index) => {
-			let style = styleGhostHeader;
+			let style = styleGhostHeaderGrey;
 			
 			if (this.props.selectedEvidenceAmount === 0 || this.props.selectedGhosts[ghostName]) {
-				style = styleGhostHeaderSelected;
+				style = styleGhostHeaderDefault;
 			}
 
 			if (this.props.selectedGhostAmount === 1 && this.props.selectedGhosts[ghostName]) {
@@ -113,12 +120,12 @@ export default class MainGridPage extends Component {
 			<div style={{ display: "flex", alignItems: "center", justifyContent: "center", margin: "25px 0px 15px 0px" }}>
 				<Container style={{ padding:"0", margin:"20px", maxWidth:"100000px"}}>
 					<Row>
-						<Col style={styleEvidenceHeader}>
+						<Col style={styleEvidenceHeaderDefault}>
 							<Button variant="danger" onClick={() => this.props.resetSelected()}>Unselect All Evidence</Button>
 						</Col>
 					</Row>
 					<Row style={{ width:"100%" }}>
-						<Col style={styleEvidenceHeader}>EVIDENCE</Col>
+						<Col style={styleEvidenceHeaderDefault}>EVIDENCE</Col>
 						{columnHeaders}
 					</Row>
 					{grid}
@@ -134,7 +141,7 @@ export default class MainGridPage extends Component {
 					/>
 					{secondaryEvidenceGrid !== null &&
 						<Row style={{ width:"100%", marginTop: "25px" }}>
-							<Col style={styleEvidenceHeader}>SECONDARY EVIDENCE</Col>
+							<Col style={styleEvidenceHeaderDefault}>SECONDARY EVIDENCE</Col>
 						</Row>
 					}
 					{secondaryEvidenceGrid}

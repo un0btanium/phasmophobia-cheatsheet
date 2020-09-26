@@ -37,8 +37,9 @@ class App extends Component {
 		let selectedGhosts = {};
 		let ghostHasEvidence = {};
 		let selectedEvidence = {};
-		// TODO grey out irrelevant evidence names
-		// TODO ignored evidence feature (right mouse click)
+		let remainingEvidence = {};
+		// TODO ignored evidence feature (right mouse click to rule out evidence and ghosts)
+		// TODO add tooltip info for each ghost (copy ingame texts)
 
 		for (let ghost of data.ghosts) {
 			selectedGhosts[ghost.name] = false;
@@ -46,19 +47,24 @@ class App extends Component {
 			ghostNames.push(ghost.name);
 		}
 
-		ghostNames.sort((a, b) => {
+		let sortAlphabetically = (a, b) => {
 			if(a < b) { return -1; }
 			if(a > b) { return 1; }
 			return 0;
-		});
-
+		}
+		ghostNames.sort(sortAlphabetically);
+		data.voicelines.general.sort(sortAlphabetically);
+		data.voicelines.ouija.sort(sortAlphabetically);
+		data.voicelines.spiritbox.sort(sortAlphabetically);
 		
 		for (let evidence of data.primaryevidence) {
 			selectedEvidence[evidence] = false;
+			remainingEvidence[evidence] = true;
 		}
 		
 		for (let evidence of data.secondaryevidence) {
 			selectedEvidence[evidence] = false;
+			remainingEvidence[evidence] = true;
 		}
 		
 
@@ -69,6 +75,7 @@ class App extends Component {
 			}
 		}
 		
+
 
 
 
@@ -86,6 +93,7 @@ class App extends Component {
 
 			selectedGhosts: selectedGhosts,
 			selectedEvidence: selectedEvidence,
+			remainingEvidence: remainingEvidence,
 
 			selectedGhostAmount: 0,
 			selectedEvidenceAmount: 0,
@@ -163,6 +171,13 @@ class App extends Component {
 		e.preventDefault();
 	}
 
+	toggleSetting(key) {
+		localStorage.setItem(key, !this.state[key]);
+		this.setState({
+			[key]: !this.state[key]
+		});
+	}
+
 
 
 	/* Grid */
@@ -187,6 +202,7 @@ class App extends Component {
 
 			let selectedGhosts = {};
 			let selectedGhostAmount = 0;
+			let remainingEvidence = {};
 			for (let ghost of this.state.data.ghosts) {
 				let ghostFitsAllEvidence = true;
 				for (let e in selectedEvidence) {
@@ -201,14 +217,20 @@ class App extends Component {
 				if (ghostFitsAllEvidence) {
 					selectedGhosts[ghost.name] = true;
 					selectedGhostAmount++;
+					for (let e of ghost.evidence) {
+						remainingEvidence[e] = true;
+					}
 				} else {
 					selectedGhosts[ghost.name] = false;
 				}
 			}
 
+			console.log(remainingEvidence)
+
 			this.setState({
 				selectedGhosts: selectedGhosts,
 				selectedEvidence: selectedEvidence,
+				remainingEvidence: remainingEvidence,
 				
 				selectedGhostAmount: selectedGhostAmount,
 				selectedEvidenceAmount: selectedEvidenceAmount,
@@ -217,16 +239,10 @@ class App extends Component {
 		}
 	}
 
-	toggleSetting(key) {
-		localStorage.setItem(key, !this.state[key]);
-		this.setState({
-			[key]: !this.state[key]
-		});
-	}
-
 	resetSelected() {
 		let selectedGhosts = {};
 		let selectedEvidence = {...this.state.selectedEvidence};
+		let remainingEvidence = {};
 
 		for (let ghost of data.ghosts) {
 			selectedGhosts[ghost.name] = false;
@@ -234,16 +250,19 @@ class App extends Component {
 
 		for (let evidence of data.primaryevidence) {
 			selectedEvidence[evidence] = false;
+			remainingEvidence[evidence] = true;
 		}
 		
 		for (let evidence of data.secondaryevidence) {
 			selectedEvidence[evidence] = false;
+			remainingEvidence[evidence] = true;
 		}
 		
 		
 		this.setState({
 			selectedGhosts: selectedGhosts,
 			selectedEvidence: selectedEvidence,
+			remainingEvidence: remainingEvidence,
 			
 			selectedGhostAmount: 0,
 			selectedEvidenceAmount: 0,
