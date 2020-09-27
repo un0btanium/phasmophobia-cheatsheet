@@ -7,24 +7,14 @@ export default class MainGridPage extends Component {
 	
 	render () {
 
-		let styleEvidenceHeaderDefault	= { minWidth: "400px",	textAlign: "left", margin: "5px", color: "white" };
-		let styleEvidenceHeaderGrey		= { minWidth: "400px",	textAlign: "left", margin: "5px", color: "grey" };
-
-		let styleGhostHeaderDefault		= { minWidth: "0px",	textAlign: "center", minHeight:"60px", color: "white" };
-		let styleGhostHeaderGrey		= { minWidth: "0px",	textAlign: "center", minHeight:"60px", color: "grey" };
-		let styleGhostHeaderResult		= { minWidth: "0px",	textAlign: "center", minHeight:"60px", color: "#05ff37" };
-		
-		let styleGhostDefault			= { minWidth: "0px",	textAlign: "center", margin: "5px", color: "white"};
-		let styleGhostGrey				= { minWidth: "0px",	textAlign: "center", margin: "5px", color: "grey" };
-
 		// PRIMARY EVIDENCE GRID 
 		let grid = this.props.data.primaryevidence.map((evidence, index) => {
 
-			let rowHeader = <Col style={this.props.remainingEvidence[evidence] ? styleEvidenceHeaderDefault : styleEvidenceHeaderGrey}>{evidence}</Col>;
+			let rowHeader = <Col className={"evidence-header" + (this.props.remainingEvidence[evidence] ? "" : " grey")}>{evidence}</Col>;
 
 			let row = this.props.ghostNames.map((ghostName) => {
 				return <Col
-					style={(this.props.selectedEvidenceAmount === 0 || this.props.selectedGhosts[ghostName]) ? styleGhostDefault : styleGhostGrey}
+					className={"ghost-evidence" + ((this.props.selectedEvidenceAmount === 0 || this.props.selectedGhosts[ghostName]) ? "" : " grey")}
 					key={"col-" + ghostName + "-" + evidence}
 				>
 					{this.props.ghostHasEvidence[ghostName][evidence] ? "X" : ""}
@@ -32,15 +22,14 @@ export default class MainGridPage extends Component {
 			});
 
 
-			let rowStyle = { width:"100%", cursor:"pointer" }
+			let rowClassName = "evidence-row";
 			if (this.props.selectedEvidence[evidence]) {
-				rowStyle["backgroundColor"] = "#177326";
+				rowClassName += " green-background";
 			} else if (index % 2 === 0) {
-				rowStyle["backgroundColor"] = "#324254";
+				rowClassName += " darkgrey-background";
 			}
-
 			return <Row
-				style={rowStyle}
+				className={rowClassName}
 				onClick={(e) => this.props.onEvidenceClick(e, evidence)}
 				key={"row-" + evidence}
 			>
@@ -65,11 +54,14 @@ export default class MainGridPage extends Component {
 				}
 
 				if (isVisible || this.props.showAllSecondaryEvidence) {
-					let rowHeader = <Col style={this.props.remainingEvidence[evidence] ? styleEvidenceHeaderDefault : styleEvidenceHeaderGrey}  key={"header-" + evidence}>{evidence}</Col>;
+					let rowHeader = <Col
+						className={"evidence-header" + (this.props.remainingEvidence[evidence] ? "" : " grey")}
+						key={"header-" + evidence}>{evidence}
+					</Col>;
 		
 					let row = this.props.ghostNames.map((ghostName) => {
 						return <Col
-							style={(this.props.selectedEvidenceAmount === 0 || this.props.selectedGhosts[ghostName]) ? styleGhostDefault : styleGhostGrey}
+							className={"ghost-evidence" + ((this.props.selectedEvidenceAmount === 0 || this.props.selectedGhosts[ghostName]) ? "" : " grey")}
 							key={"col-" + ghostName + "-" + evidence}
 						>
 							{this.props.ghostHasEvidence[ghostName][evidence] ? "X" : ""}
@@ -78,16 +70,15 @@ export default class MainGridPage extends Component {
 					});
 		
 		
-					let rowStyle = { width:"100%", cursor:"pointer" }
+					let rowClassName = "evidence-row";
 					if (this.props.selectedEvidence[evidence]) {
-						rowStyle["backgroundColor"] = "#177326";
+						rowClassName += " green-background";
 					} else if (index % 2 === 0) {
-						rowStyle["backgroundColor"] = "#324254";
+						rowClassName += " darkgrey-background";
 					}
-		
 					index++;
 					return <Row
-						style={rowStyle}
+						className={rowClassName}
 						onClick={(e) => this.props.onEvidenceClick(e, evidence)}
 						key={"row-" + evidence}
 					>
@@ -103,29 +94,26 @@ export default class MainGridPage extends Component {
 
 		// GHOST HEADER ROW
 		let columnHeaders = this.props.ghostNames.map((ghostName, index) => {
-			let style = styleGhostHeaderGrey;
-			
+			let additionalStyle = " grey"
 			if (this.props.selectedEvidenceAmount === 0 || this.props.selectedGhosts[ghostName]) {
-				style = styleGhostHeaderDefault;
+				additionalStyle = "";
 			}
-
 			if (this.props.selectedGhostAmount === 1 && this.props.selectedGhosts[ghostName]) {
-				style = styleGhostHeaderResult;
+				additionalStyle = " green";
 			}
-			
-			return <Col style={style} key={"header-" + ghostName}><div className="rotated45">{ghostName}</div></Col>
+			return <Col className={"ghost-header" + additionalStyle} key={"header-" + ghostName}><div className="rotated45">{ghostName}</div></Col>
 		});
 
 		return <div style={{ display: "inline-block", width: "100%", height:"100%"}}>
 			<div style={{ display: "flex", alignItems: "center", justifyContent: "center", margin: "25px 0px 15px 0px" }}>
 				<Container style={{ padding:"0", margin:"20px", maxWidth:"100000px"}}>
 					<Row>
-						<Col style={styleEvidenceHeaderDefault}>
+						<Col className={"evidence-header"}>
 							<Button variant="danger" onClick={() => this.props.resetSelected()}>Unselect All Evidence</Button>
 						</Col>
 					</Row>
 					<Row style={{ width:"100%" }}>
-						<Col style={styleEvidenceHeaderDefault}>EVIDENCE</Col>
+						<Col className={"evidence-header"}>EVIDENCE</Col>
 						{columnHeaders}
 					</Row>
 					{grid}
@@ -141,7 +129,7 @@ export default class MainGridPage extends Component {
 					/>
 					{secondaryEvidenceGrid !== null &&
 						<Row style={{ width:"100%", marginTop: "25px" }}>
-							<Col style={styleEvidenceHeaderDefault}>SECONDARY EVIDENCE</Col>
+							<Col className={"evidence-header"}>SECONDARY EVIDENCE</Col>
 						</Row>
 					}
 					{secondaryEvidenceGrid}

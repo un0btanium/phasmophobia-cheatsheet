@@ -225,8 +225,6 @@ class App extends Component {
 				}
 			}
 
-			console.log(remainingEvidence)
-
 			this.setState({
 				selectedGhosts: selectedGhosts,
 				selectedEvidence: selectedEvidence,

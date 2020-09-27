@@ -64,13 +64,13 @@ code {
 
 .rotated45 {
 
-  transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-
-}
+	transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+  
+  }
 
 .disableSelection {
   -ms-user-select: none;
@@ -90,6 +90,63 @@ code {
 
 
 
-.selected-evidence-background {
-	background-color: blue;
+.evidence-row {
+	width:100%;
+	cursor: pointer;
+}
+.evidence-row.green-background {
+	background-color:#177326;
+}
+.evidence-row.darkgrey-background {
+	background-color:#324254;
+}
+
+.evidence-header {
+	min-width: 400px;
+	text-align: left;
+	margin: 5px;
+	color: white;
+}
+.evidence-header.grey {
+	color: grey;
+}
+@media screen and (max-width: 930px) {
+	.evidence-header {
+		min-width: 150px;
+	}
+}
+
+.ghost-header {
+	min-width: 0px;
+	min-height: 60px;
+	text-align: center;
+	color: white;
+}
+.ghost-header.grey {
+	color: grey;
+}
+.ghost-header.green {
+	color: #05ff37;
+}
+@media screen and (max-width: 930px) {
+	.ghost-header {
+		padding-left: 0px !important;
+		padding-right: 0px !important;
+	}
+}
+
+.ghost-evidence {
+	min-width: 0px;
+	text-align: center;
+	margin: 5px;
+	color: white;
+}
+.ghost-evidence.grey {
+	color: grey;
+}
+@media screen and (max-width: 930px) {
+	.ghost-evidence {
+		padding-left: 0px !important;
+		padding-right: 0px !important;
+	}
 }
