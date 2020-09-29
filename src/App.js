@@ -21,10 +21,9 @@ import logo from "./images/ghost.svg";
 const BG = "dark"; // primary, dark, light
 const VARIANT = "dark"; // dark, light
 
-// const reloadWindow = () => window.location.reload();
-
-
 const WEBSITE_URL = "un0btanium.github.io/phasmophobia-cheatsheet/";
+
+const PATCH_VERSION = "Post Launch Update #2";
 
 class App extends Component {
 
@@ -132,7 +131,7 @@ class App extends Component {
 							<Nav>
 								<Nav.Link as={Link} variant="light" to="/phasmophobia-cheatsheet/about"><b>About</b></Nav.Link>
 								<Nav.Link as={Link} variant="light" to="/phasmophobia-cheatsheet/contact"><b>Contact</b></Nav.Link>
-								<Navbar.Text style={{ color: "rgb(223, 105, 26)", marginLeft: "20px"}}><b>Patch <i>Post Launch Update #1</i></b></Navbar.Text>
+								<Navbar.Text style={{ color: "rgb(223, 105, 26)", marginLeft: "20px"}}><b>Patch <i>{PATCH_VERSION}</i></b></Navbar.Text>
 								{/* <Form inline style={{marginLeft: "20px"}}><Form.Check id="toggleIsFullScreen" type="checkbox" className="custom-switch" custom="true" label="Go Fullscreen" checked={this.state.isFullScreen} onChange={(e) => this.toggleSetting("isFullScreen")} /></Form> */}
 							</Nav>
 						</Navbar.Collapse>
