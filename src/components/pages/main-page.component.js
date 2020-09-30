@@ -60,7 +60,7 @@ export default class MainGridPage extends Component {
 					}
 				}
 
-				if (isVisible || this.props.ignoredEvidence[evidence] || this.props.showAllSecondaryEvidence) {
+				if (isVisible || this.props.ignoredEvidence[evidence] || this.props.selectedEvidence[evidence] || this.props.showAllSecondaryEvidence) {
 					let rowHeader = <Col
 						className={"evidence-header" + (this.props.remainingEvidence[evidence] ? "" : " grey")}
 						key={"header-" + evidence}>{evidence}
