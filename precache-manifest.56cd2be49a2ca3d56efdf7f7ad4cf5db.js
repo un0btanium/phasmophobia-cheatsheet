@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0ff1a0fc2492ea4ed7f9498fefbc3860",
+    "revision": "dd847d0963ccb6dd5b6559122545e638",
     "url": "/phasmophobia-cheatsheet/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/phasmophobia-cheatsheet/static/css/2.d9ad5f5c.chunk.css"
   },
   {
-    "revision": "6ad9e052c673862f1256",
+    "revision": "fe09cb449b0e2c510319",
     "url": "/phasmophobia-cheatsheet/static/css/main.f8a10b96.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/phasmophobia-cheatsheet/static/js/2.b08e41b0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "6ad9e052c673862f1256",
-    "url": "/phasmophobia-cheatsheet/static/js/main.b3a43d1e.chunk.js"
+    "revision": "fe09cb449b0e2c510319",
+    "url": "/phasmophobia-cheatsheet/static/js/main.d34fab77.chunk.js"
   },
   {
     "revision": "006bdd8014f18be11f2a",
