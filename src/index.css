@@ -97,6 +97,9 @@ code {
 .evidence-row.green-background {
 	background-color:#177326;
 }
+.evidence-row.red-background {
+	background-color:#731717;
+}
 .evidence-row.darkgrey-background {
 	background-color:#324254;
 }

@@ -34,14 +34,17 @@ class App extends Component {
 		let ghostNames = [];
 		let ghostsByName = {};
 		let selectedGhosts = {};
+		let ignoredGhosts = {};
 		let ghostHasEvidence = {};
 		let selectedEvidence = {};
+		let ignoredEvidence = {};
 		let remainingEvidence = {};
 		// TODO ignored evidence feature (right mouse click to rule out evidence and ghosts)
 		// TODO add tooltip info for each ghost (copy ingame texts)
 
 		for (let ghost of data.ghosts) {
 			selectedGhosts[ghost.name] = false;
+			ignoredGhosts[ghost.name] = false;
 			ghostsByName[ghost.name] = ghost;
 			ghostNames.push(ghost.name);
 		}
@@ -58,11 +61,13 @@ class App extends Component {
 		
 		for (let evidence of data.primaryevidence) {
 			selectedEvidence[evidence] = false;
+			ignoredEvidence[evidence] = false;
 			remainingEvidence[evidence] = true;
 		}
 		
 		for (let evidence of data.secondaryevidence) {
 			selectedEvidence[evidence] = false;
+			ignoredEvidence[evidence] = false;
 			remainingEvidence[evidence] = true;
 		}
 		
@@ -74,9 +79,6 @@ class App extends Component {
 			}
 		}
 		
-
-
-
 
 		this.onEvidenceClick = this.onEvidenceClick.bind(this);
 		this.toggleSetting = this.toggleSetting.bind(this);
@@ -91,7 +93,9 @@ class App extends Component {
 			ghostsByName: ghostsByName,
 
 			selectedGhosts: selectedGhosts,
+			ignoredGhosts: ignoredGhosts,
 			selectedEvidence: selectedEvidence,
+			ignoredEvidence: ignoredEvidence,
 			remainingEvidence: remainingEvidence,
 
 			selectedGhostAmount: 0,
@@ -184,81 +188,112 @@ class App extends Component {
 	onEvidenceClick(e, evidence) {
 		e.preventDefault();
 
+		let selectedEvidence = {...this.state.selectedEvidence};
+		let ignoredEvidence = {...this.state.ignoredEvidence};
+
 		if (e.type === 'click') {
-			let selectedEvidence = {...this.state.selectedEvidence};
 			selectedEvidence[evidence] = !selectedEvidence[evidence];
-
-			let selectedEvidenceAmount = 0;
-			let selectedSecondaryEvidenceAmount = 0;
-			for (let e in selectedEvidence) {
-				if (selectedEvidence[e] === true) {
-					selectedEvidenceAmount++;
-					if (this.state.data.secondaryevidence.includes(e)) {
-						selectedSecondaryEvidenceAmount++;
-					}
-				}
+			if (selectedEvidence[evidence]) {
+				ignoredEvidence[evidence] = false;
 			}
-
-			let selectedGhosts = {};
-			let selectedGhostAmount = 0;
-			let remainingEvidence = {};
-			for (let ghost of this.state.data.ghosts) {
-				let ghostFitsAllEvidence = true;
-				for (let e in selectedEvidence) {
-					if (selectedEvidence[e]) {
-						if (!ghost.evidence.includes(e)) {
-							ghostFitsAllEvidence = false;
-							break;
-						}
-					}
-				}
-
-				if (ghostFitsAllEvidence) {
-					selectedGhosts[ghost.name] = true;
-					selectedGhostAmount++;
-					for (let e of ghost.evidence) {
-						remainingEvidence[e] = true;
-					}
-				} else {
-					selectedGhosts[ghost.name] = false;
-				}
+		} else if (e.type === 'contextmenu') {
+			ignoredEvidence[evidence] = !ignoredEvidence[evidence];
+			if (ignoredEvidence[evidence]) {
+				selectedEvidence[evidence] = false;
 			}
-
-			this.setState({
-				selectedGhosts: selectedGhosts,
-				selectedEvidence: selectedEvidence,
-				remainingEvidence: remainingEvidence,
-				
-				selectedGhostAmount: selectedGhostAmount,
-				selectedEvidenceAmount: selectedEvidenceAmount,
-				selectedSecondaryEvidenceAmount: selectedSecondaryEvidenceAmount
-			});
 		}
+		
+
+		let selectedEvidenceAmount = 0;
+		let selectedSecondaryEvidenceAmount = 0;
+		for (let e in selectedEvidence) {
+			if (selectedEvidence[e] === true || ignoredEvidence[e] === true) {
+				selectedEvidenceAmount++;
+				if (this.state.data.secondaryevidence.includes(e)) {
+					selectedSecondaryEvidenceAmount++;
+				}
+			}
+		}
+
+		let selectedGhosts = {};
+		let ignoredGhosts = {};
+		let selectedGhostAmount = 0;
+		let remainingEvidence = {};
+		for (let ghost of this.state.data.ghosts) {
+			let ghostFitsAllEvidence = true;
+			for (let e in selectedEvidence) {
+				if (selectedEvidence[e]) {
+					if (!ghost.evidence.includes(e)) {
+						ghostFitsAllEvidence = false;
+						break;
+					}
+				}
+			}
+
+			for (let e in ignoredEvidence) {
+				if (ignoredEvidence[e]) {
+					if (ghost.evidence.includes(e)) {
+						ignoredGhosts[ghost.name] = true;
+						ghostFitsAllEvidence = false;
+						break;
+					}
+				}
+			}
+
+			if (ghostFitsAllEvidence) {
+				selectedGhosts[ghost.name] = true;
+				selectedGhostAmount++;
+				for (let e of ghost.evidence) {
+					remainingEvidence[e] = true;
+				}
+			} else {
+				selectedGhosts[ghost.name] = false;
+			}
+		}
+
+		this.setState({
+			selectedGhosts: selectedGhosts,
+			ignoredGhosts: ignoredGhosts,
+			selectedEvidence: selectedEvidence,
+			ignoredEvidence: ignoredEvidence,
+			remainingEvidence: remainingEvidence,
+			
+			selectedGhostAmount: selectedGhostAmount,
+			selectedEvidenceAmount: selectedEvidenceAmount,
+			selectedSecondaryEvidenceAmount: selectedSecondaryEvidenceAmount
+		});
 	}
 
 	resetSelected() {
 		let selectedGhosts = {};
+		let ignoredGhosts = {};
 		let selectedEvidence = {...this.state.selectedEvidence};
+		let ignoredEvidence = {...this.state.ignoredEvidence};
 		let remainingEvidence = {};
 
 		for (let ghost of data.ghosts) {
 			selectedGhosts[ghost.name] = false;
+			ignoredGhosts[ghost.name] = false;
 		}
 
 		for (let evidence of data.primaryevidence) {
 			selectedEvidence[evidence] = false;
+			ignoredEvidence[evidence] = false;
 			remainingEvidence[evidence] = true;
 		}
 		
 		for (let evidence of data.secondaryevidence) {
 			selectedEvidence[evidence] = false;
+			ignoredEvidence[evidence] = false;
 			remainingEvidence[evidence] = true;
 		}
 		
 		
 		this.setState({
 			selectedGhosts: selectedGhosts,
+			ignoredGhosts: ignoredGhosts,
 			selectedEvidence: selectedEvidence,
+			ignoredEvidence: ignoredEvidence,
 			remainingEvidence: remainingEvidence,
 			
 			selectedGhostAmount: 0,
