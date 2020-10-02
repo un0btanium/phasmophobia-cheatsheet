@@ -55,9 +55,9 @@ class App extends Component {
 			return 0;
 		}
 		ghostNames.sort(sortAlphabetically);
-		data.voicelines.general.sort(sortAlphabetically);
-		data.voicelines.ouija.sort(sortAlphabetically);
-		data.voicelines.spiritbox.sort(sortAlphabetically);
+		for (let voicelineName in data.voicelines) {
+			data.voicelines[voicelineName].sort(sortAlphabetically);
+		}
 		
 		for (let evidence of data.primaryevidence) {
 			selectedEvidence[evidence] = false;

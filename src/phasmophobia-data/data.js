@@ -338,6 +338,9 @@ var data = {
 			"We are friends.",
 			"Is this you're home?",
 			"Can you speak to us?",
+		],
+		"attacktrigger": [
+			"<The Ghosts Name>",
 			"I'm scared.",
 			"I am scared.",
 			"Scared.",
@@ -352,7 +355,19 @@ var data = {
 			"Run.",
 			"Show your presence.",
 			"Show us.",
-			"Show me."
+			"Show me.",
+			"Fuck",
+			"Bitch",
+			"Shit",
+			"Cunt",
+			"Ass",
+			"Bastard",
+			"Motherfucker (high response)",
+			"Arsehole",
+			"Crap",
+			"Pussy",
+			"Dickhead",
+			"Bloody Mary"
 		]
 	}
 };
