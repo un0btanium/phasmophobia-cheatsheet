@@ -94,6 +94,9 @@ code {
 	width:100%;
 	cursor: pointer;
 }
+.evidence-row:hover {
+	opacity: 0.8;
+}
 .evidence-row.green-background {
 	background-color:#177326;
 }

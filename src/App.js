@@ -23,7 +23,7 @@ const VARIANT = "dark"; // dark, light
 
 const WEBSITE_URL = "un0btanium.github.io/phasmophobia-cheatsheet/";
 
-const PATCH_VERSION = "Post Launch Update #2";
+const PATCH_VERSION = "May 2021";
 
 class App extends Component {
 
