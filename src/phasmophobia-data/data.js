@@ -33,7 +33,15 @@ var data = {
 		"attacks often and without reason",
 		"sanity is not lowered when asking successful Ouija Board questions",
 		"reduces sanity more quickly",
-		"smudging the room will stop it from wandering around for a long time"
+		"smudging the room will stop it from wandering around for a long time",
+		"attracted to human voices",
+		"haunts family homes",
+		"talking near ghost increases chance of attack",
+		"while hunting only hears voices closeby",
+		"rare ghost, found in hot climates",
+		"attack often during cold weather",
+		"moves faster at lower temperatures",
+		"moves slower in warm areas"
 	],
 	"ghosts": [
 		{
@@ -205,7 +213,39 @@ var data = {
 				"objects moved at great speeds",
 				"more active when people are nearby"
 			]
-		}
+		},
+		{
+			"name": "Yokai",
+			"description":"",
+			"uniquestrength": "",
+			"weaknesses": "",
+			"evidence": [
+				"Spirit Box",
+				"Ghost Orbs",
+				"Ghost Writing",
+
+				"attracted to human voices",
+				"haunts family homes",
+				"talking near ghost increases chance of attack",
+				"while hunting only hears voices closeby"
+			]
+		},
+		{
+			"name": "Hantu",
+			"description":"",
+			"uniquestrength": "",
+			"weaknesses": "",
+			"evidence": [
+				"Fingerprints",
+				"Ghost Orbs",
+				"Ghost Writing",
+
+				"rare ghost, found in hot climates",
+				"attack often during cold weather",
+				"moves faster at lower temperatures",
+				"moves slower in warm areas"
+			]
+		},
 	],
 	"voicelines": {
 		"general": [
