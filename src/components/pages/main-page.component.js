@@ -50,7 +50,7 @@ export default class MainGridPage extends Component {
 		// SECONDARY EVIDENCE GRID
 		let index = 0;
 		let secondaryEvidenceGrid = null;
-		if (this.props.selectedEvidenceAmount > 1 || this.props.selectedSecondaryEvidenceAmount > 0 || this.props.showAllSecondaryEvidence) {
+		if (this.props.selectedEvidenceAmount > 0 || this.props.selectedSecondaryEvidenceAmount > 0 || this.props.showAllSecondaryEvidence) {
 			secondaryEvidenceGrid = this.props.data.secondaryevidence.map((evidence) => {
 				let isVisible = false;
 				for (let ghostName of this.props.ghostNames) {
