@@ -27,8 +27,8 @@ var data = {
 		"scared off easily by the Crucifix. Crucifix has bigger range (6 meters instead of 3)",
 		"walks 2 times faster than a player if breaker is on and ghost is 3 meters away from targeted player",
 		"his special power ability instantly 25% sanity within 3 meters",
-		"increased chance of an attack if the lights in the ghost room are on",
-		"lower chance of an attack when lights in the ghost room are off",
+		"increased chance of an attack if the lights in the ghost room are off",
+		"lower chance of an attack when lights in the ghost room are on",
 		"travels 2 times faster than a player at hunts when has player in sight",
 		"travels 2 times slower than a player at hunts when has no player in sight",
 		"shy ghost with no activity/hunting when multiple people are in the ghost room",
@@ -144,8 +144,8 @@ var data = {
 
 				"hunts above 50% sanity",
 				"hunts only below 40% sanity if the light is on in the ghost room, otherwise it can hunt below 60%",
-				"increased chance of an attack if the lights in the ghost room are on",
-				"lower chance of an attack when lights in the ghost room are off"
+				"increased chance of an attack if the lights in the ghost room are off",
+				"lower chance of an attack when lights in the ghost room are on"
 			]
 		},
 		{
