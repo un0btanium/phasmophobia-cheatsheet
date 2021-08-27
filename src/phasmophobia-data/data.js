@@ -5,7 +5,8 @@ var data = {
 		"Freezing Temperature",
 		"Ghost Orbs",
 		"Ghost Writing",
-		"Spirit Box"
+		"Spirit Box",
+		"D.O.T.S. Projector"
 	],
 	"secondaryevidence": [
 		"objects moved at great speeds",
@@ -41,7 +42,11 @@ var data = {
 		"rare ghost, found in hot climates",
 		"attack often during cold weather",
 		"moves faster at lower temperatures",
-		"moves slower in warm areas"
+		"moves slower in warm areas",
+		"Only visibly through the Video Camera",
+		"Rarely seen far away from their place of death",
+		"Makes paranormal sounds",
+		"Quieter when hunting"
 	],
 	"ghosts": [
 		{
@@ -50,7 +55,7 @@ var data = {
 			"uniquestrength": "",
 			"weaknesses": "",
 			"evidence": [
-				"Fingerprints",
+				"EMF Level 5",
 				"Ghost Writing",
 				"Spirit Box",
 				
@@ -63,9 +68,9 @@ var data = {
 			"uniquestrength": "",
 			"weaknesses": "",
 			"evidence": [
-				"Fingerprints",
-				"Freezing Temperature",
+				"EMF Level 5",
 				"Spirit Box",
+				"D.O.T.S. Projector",
 
 				"flying, no footprints",
 				"toxic reaction to salt",
@@ -78,9 +83,9 @@ var data = {
 			"uniquestrength": "",
 			"weaknesses": "",
 			"evidence": [
-				"EMF Level 5",
-				"Freezing Temperature",
-				"Ghost Orbs",
+				"Spirit Box",
+				"Fingerprints",
+				"D.O.T.S. Projector",
 
 				"looking at the ghost drops sanity considerably",
 				"taking a photo makes the ghost temporarily disappear",
@@ -94,9 +99,9 @@ var data = {
 			"uniquestrength": "",
 			"weaknesses": "",
 			"evidence": [
-				"Fingerprints",
-				"Ghost Orbs",
 				"Spirit Box",
+				"Ghost Writing",
+				"Fingerprints",
 
 				"throws multiple objects at once"
 			]
@@ -107,9 +112,9 @@ var data = {
 			"uniquestrength": "",
 			"weaknesses": "",
 			"evidence": [
-				"EMF Level 5",
+				"Ghost Orbs",
 				"Fingerprints",
-				"Freezing Temperature",
+				"D.O.T.S. Projector",
 
 				"targets and hunts one person at a time",
 				"scared off easily by the Crucifix"
@@ -121,9 +126,9 @@ var data = {
 			"uniquestrength": "",
 			"weaknesses": "",
 			"evidence": [
+				"Freezing Temperature",
 				"EMF Level 5",
-				"Ghost Orbs",
-				"Spirit Box",
+				"Fingerprints",
 				
 				"territorial ghost that attacks when threatened",
 				"travels fast when victim is far away",
@@ -136,9 +141,9 @@ var data = {
 			"uniquestrength": "",
 			"weaknesses": "",
 			"evidence": [
-				"Freezing Temperature",
 				"Ghost Orbs",
 				"Spirit Box",
+				"Ghost Writing",
 
 				"most powerful in the dark",
 				"increased chance of an attack in the dark",
@@ -151,8 +156,8 @@ var data = {
 			"uniquestrength": "",
 			"weaknesses": "",
 			"evidence": [
-				"EMF Level 5",
-				"Fingerprints",
+				"Freezing Temperature",
+				"Ghost Orbs",
 				"Ghost Writing",
 				
 				"travels at significantly high speeds when hunting",
@@ -165,8 +170,8 @@ var data = {
 			"uniquestrength": "",
 			"weaknesses": "",
 			"evidence": [
+				"Freezing Temperature",
 				"EMF Level 5",
-				"Ghost Orbs",
 				"Ghost Writing",
 
 				"shy ghost with no activity/hunting when multiple people are nearby"
@@ -179,8 +184,8 @@ var data = {
 			"weaknesses": "",
 			"evidence": [
 				"Freezing Temperature",
+				"Fingerprints",
 				"Ghost Writing",
-				"Spirit Box",
 
 				"attacks often and without reason",
 				"sanity is not lowered when asking successful Ouija Board questions"
@@ -194,7 +199,7 @@ var data = {
 			"evidence": [
 				"Freezing Temperature",
 				"Ghost Orbs",
-				"Ghost Writing",
+				"D.O.T.S. Projector",
 
 				"reduces sanity more quickly",
 				"smudging the room will stop it from wandering around for a long time"
@@ -206,9 +211,9 @@ var data = {
 			"uniquestrength": "",
 			"weaknesses": "",
 			"evidence": [
+				"Freezing Temperature",
 				"EMF Level 5",
-				"Ghost Writing",
-				"Spirit Box",
+				"D.O.T.S. Projector",
 
 				"objects moved at great speeds",
 				"more active when people are nearby"
@@ -220,9 +225,9 @@ var data = {
 			"uniquestrength": "",
 			"weaknesses": "",
 			"evidence": [
-				"Spirit Box",
 				"Ghost Orbs",
-				"Ghost Writing",
+				"Spirit Box",
+				"D.O.T.S. Projector",
 
 				"attracted to human voices",
 				"haunts family homes",
@@ -236,14 +241,42 @@ var data = {
 			"uniquestrength": "",
 			"weaknesses": "",
 			"evidence": [
-				"Fingerprints",
+				"Freezing Temperature",
 				"Ghost Orbs",
-				"Ghost Writing",
+				"Fingerprints",
 
 				"rare ghost, found in hot climates",
 				"attack often during cold weather",
 				"moves faster at lower temperatures",
 				"moves slower in warm areas"
+			]
+		},
+		{
+			"name": "Goryo",
+			"description":"",
+			"uniquestrength": "",
+			"weaknesses": "",
+			"evidence": [
+				"EMF Level 5",
+				"Fingerprints",
+				"D.O.T.S. Projector",
+
+				"Only visibly through the Video Camera",
+				"Rarely seen far away from their place of death"
+			]
+		},
+		{
+			"name": "Myling",
+			"description":"",
+			"uniquestrength": "",
+			"weaknesses": "",
+			"evidence": [
+				"EMF Level 5",
+				"Fingerprints",
+				"Ghost Writing",
+
+				"Makes paranormal sounds",
+				"Quieter when hunting"
 			]
 		},
 	],
