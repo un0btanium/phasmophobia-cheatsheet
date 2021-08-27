@@ -1,11 +1,20 @@
+const DOTS = "DOTS Projector";
+const EMF5 = "EMF Level 5";
+const FINGERPRINTS = "Fingerprints";
+const FREEZING = "Freezing Temperature";
+const ORBS = "Ghost Orbs";
+const WRITING = "Ghost Writing";
+const BOX = "Spirit Box";
+
 var data = {
 	"primaryevidence": [
-		"EMF Level 5",
-		"Fingerprints",
-		"Freezing Temperature",
-		"Ghost Orbs",
-		"Ghost Writing",
-		"Spirit Box"
+		DOTS,
+		EMF5,
+		FINGERPRINTS,
+		FREEZING,
+		ORBS,
+		WRITING,
+		BOX
 	],
 	"secondaryevidence": [
 		"objects moved at great speeds",
@@ -50,9 +59,9 @@ var data = {
 			"uniquestrength": "",
 			"weaknesses": "",
 			"evidence": [
-				"Fingerprints",
-				"Ghost Writing",
-				"Spirit Box",
+				EMF5,
+				WRITING,
+				BOX,
 				
 				"smudge stick stops attacks for a long time"
 			]
@@ -63,9 +72,9 @@ var data = {
 			"uniquestrength": "",
 			"weaknesses": "",
 			"evidence": [
-				"Fingerprints",
-				"Freezing Temperature",
-				"Spirit Box",
+				DOTS,
+				EMF5,
+				BOX,
 
 				"flying, no footprints",
 				"toxic reaction to salt",
@@ -78,9 +87,9 @@ var data = {
 			"uniquestrength": "",
 			"weaknesses": "",
 			"evidence": [
-				"EMF Level 5",
-				"Freezing Temperature",
-				"Ghost Orbs",
+				DOTS,
+				FINGERPRINTS,
+				BOX,
 
 				"looking at the ghost drops sanity considerably",
 				"taking a photo makes the ghost temporarily disappear",
@@ -94,9 +103,9 @@ var data = {
 			"uniquestrength": "",
 			"weaknesses": "",
 			"evidence": [
-				"Fingerprints",
-				"Ghost Orbs",
-				"Spirit Box",
+				FINGERPRINTS,
+				WRITING,
+				BOX,
 
 				"throws multiple objects at once"
 			]
@@ -107,9 +116,9 @@ var data = {
 			"uniquestrength": "",
 			"weaknesses": "",
 			"evidence": [
-				"EMF Level 5",
-				"Fingerprints",
-				"Freezing Temperature",
+				DOTS,
+				FINGERPRINTS,
+				ORBS,
 
 				"targets and hunts one person at a time",
 				"scared off easily by the Crucifix"
@@ -121,9 +130,9 @@ var data = {
 			"uniquestrength": "",
 			"weaknesses": "",
 			"evidence": [
-				"EMF Level 5",
-				"Ghost Orbs",
-				"Spirit Box",
+				EMF5,
+				FINGERPRINTS,
+				FREEZING,
 				
 				"territorial ghost that attacks when threatened",
 				"travels fast when victim is far away",
@@ -136,9 +145,9 @@ var data = {
 			"uniquestrength": "",
 			"weaknesses": "",
 			"evidence": [
-				"Freezing Temperature",
-				"Ghost Orbs",
-				"Spirit Box",
+				ORBS,
+				WRITING,
+				BOX,
 
 				"most powerful in the dark",
 				"increased chance of an attack in the dark",
@@ -151,10 +160,10 @@ var data = {
 			"uniquestrength": "",
 			"weaknesses": "",
 			"evidence": [
-				"EMF Level 5",
-				"Fingerprints",
-				"Ghost Writing",
-				
+				FREEZING,
+				ORBS,
+				WRITING,
+
 				"travels at significantly high speeds when hunting",
 				"hiding slows down the ghost significantly"
 			]
@@ -165,9 +174,9 @@ var data = {
 			"uniquestrength": "",
 			"weaknesses": "",
 			"evidence": [
-				"EMF Level 5",
-				"Ghost Orbs",
-				"Ghost Writing",
+				EMF5,
+				FREEZING,
+				WRITING,
 
 				"shy ghost with no activity/hunting when multiple people are nearby"
 			]
@@ -178,9 +187,9 @@ var data = {
 			"uniquestrength": "",
 			"weaknesses": "",
 			"evidence": [
-				"Freezing Temperature",
-				"Ghost Writing",
-				"Spirit Box",
+				FINGERPRINTS,
+				FREEZING,
+				WRITING,
 
 				"attacks often and without reason",
 				"sanity is not lowered when asking successful Ouija Board questions"
@@ -192,9 +201,9 @@ var data = {
 			"uniquestrength": "",
 			"weaknesses": "",
 			"evidence": [
-				"Freezing Temperature",
-				"Ghost Orbs",
-				"Ghost Writing",
+				DOTS,
+				FREEZING,
+				ORBS,
 
 				"reduces sanity more quickly",
 				"smudging the room will stop it from wandering around for a long time"
@@ -206,9 +215,9 @@ var data = {
 			"uniquestrength": "",
 			"weaknesses": "",
 			"evidence": [
-				"EMF Level 5",
-				"Ghost Writing",
-				"Spirit Box",
+				DOTS,
+				EMF5,
+				FREEZING,
 
 				"objects moved at great speeds",
 				"more active when people are nearby"
@@ -220,9 +229,9 @@ var data = {
 			"uniquestrength": "",
 			"weaknesses": "",
 			"evidence": [
-				"Spirit Box",
-				"Ghost Orbs",
-				"Ghost Writing",
+				DOTS,
+				ORBS,
+				BOX,
 
 				"attracted to human voices",
 				"haunts family homes",
@@ -236,9 +245,9 @@ var data = {
 			"uniquestrength": "",
 			"weaknesses": "",
 			"evidence": [
-				"Fingerprints",
-				"Ghost Orbs",
-				"Ghost Writing",
+				FINGERPRINTS,
+				FREEZING,
+				ORBS,
 
 				"rare ghost, found in hot climates",
 				"attack often during cold weather",
@@ -246,6 +255,28 @@ var data = {
 				"moves slower in warm areas"
 			]
 		},
+		{
+			"name": "Myling",
+			"description": "",
+			"uniquestrength": "",
+			"weaknesses": "",
+			"evidence": [
+				EMF5,
+				FINGERPRINTS,
+				WRITING
+			]
+		},
+		{
+			"name": "Goryo",
+			"description": "",
+			"uniquestrength": "",
+			"weaknesses": "",
+			"evidence": [
+				DOTS,
+				EMF5,
+				FINGERPRINTS
+			]
+		}
 	],
 	"voicelines": {
 		"general": [
