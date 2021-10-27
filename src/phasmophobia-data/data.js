@@ -46,7 +46,14 @@ var data = {
 		"Only visibly through the Video Camera",
 		"Rarely seen far away from their place of death",
 		"Makes paranormal sounds",
-		"Quieter when hunting"
+		"Quieter when hunting",
+		"Fears any form of fire",
+		"Attacks when flames are extinguished",
+		"Attacks alternate",
+		"Often disrupts electronic equipment",
+		"Moves faster when nearby electrical devices",
+		"Rarely leaves a trace when interacting with the environment",
+		"Ghost shapeshifts occasionally, leaving behind unique evidence"
 	],
 	"ghosts": [
 		{
