@@ -23,7 +23,7 @@ const VARIANT = "dark"; // dark, light
 
 const WEBSITE_URL = "un0btanium.github.io/phasmophobia-cheatsheet/";
 
-const PATCH_VERSION = "August 2021";
+const PATCH_VERSION = data.patchVersion;
 
 class App extends Component {
 
@@ -39,7 +39,6 @@ class App extends Component {
 		let selectedEvidence = {};
 		let ignoredEvidence = {};
 		let remainingEvidence = {};
-		// TODO ignored evidence feature (right mouse click to rule out evidence and ghosts)
 		// TODO add tooltip info for each ghost (copy ingame texts)
 
 		for (let ghost of data.ghosts) {
