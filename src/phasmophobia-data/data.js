@@ -1,5 +1,5 @@
 var data ={
-	"patchVersion": "October 2021",
+	"patchVersion": "0.4.1 November 2021",
 	"primaryevidence": [
 		"EMF Level 5",
 		"Fingerprints",
@@ -41,6 +41,7 @@ var data ={
 		"Walking speed is affected by room temperature - hot 1.8 m/s, cold 1 m/s",
 		"D.O.T.S. only visible through a video cam and no players in the room",
 		"Less likely to roam when not hunting",
+		"Always gives the D.O.T.S. evidence on nightmare difficulty",
 		"More sounds on the parabolic mic",
 		"During a hunt footstep sounds can only be heard when 10m or closer (similar to electronic interference)",
 		"Can initiate a hunt when any flames are extinguished regardless of average sanity",
@@ -53,10 +54,10 @@ var data ={
 		"It doesn't matter if the equipment lies on the floor or held by a player",
 		"Abilities only affected by player equipment and not location electrics like TVs or lights",
 		"Can initiate a hunt at an avarage sanity of 70% if there is electrical equipment nearby",
-		"Reduced chance of 40% to leave fingerprints",
+		"Reduced chance to leave fingerprints",
 		"Low chance to leave fingerprints with 6 fingers",
-    "Fingerprints disappear earlier (30s to 60s) than other ghosts (60s to 120s)",
-		"Objects will generally not be moved when touched"
+    "Fingerprints disappear earlier (60s) than other ghosts (120s)",
+		"Always gives the Fingerprints evidence on nightmare difficulty"
 	],
 	"ghosts": [
 		{
@@ -267,7 +268,8 @@ var data ={
 				"D.O.T.S. Projector",
 
 				"D.O.T.S. only visible through a video cam and no players in the room",
-				"Less likely to roam when not hunting"
+				"Less likely to roam when not hunting",
+				"Always gives the D.O.T.S. evidence on nightmare difficulty"
 			]
 		},
 		{
@@ -340,10 +342,10 @@ var data ={
 				"Fingerprints",
 				"Ghost Orbs",
 
-				"Reduced chance of 40% to leave fingerprints",
+				"Reduced chance to leave fingerprints",
 				"Low chance to leave fingerprints with 6 fingers",
-    		"Fingerprints disappear earlier (30s to 60s) than other ghosts (60s to 120s)",
-				"Objects will generally not be moved when touched"
+		    "Fingerprints disappear earlier (60s) than other ghosts (120s)",
+				"Always gives the Fingerprints evidence on nightmare difficulty"
 			]
 		}
 	],
