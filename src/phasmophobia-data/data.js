@@ -1,4 +1,4 @@
-var data = {
+var data ={
 	"patchVersion": "October 2021",
 	"primaryevidence": [
 		"EMF Level 5",
@@ -11,7 +11,7 @@ var data = {
 	],
 	"secondaryevidence": [
 		"Chance to throw objects at great speeds",
-		"More ghost activity and events when more people are nearby",
+		"More ghost activity and events when there are more people are nearby",
 		"Smudge sticks stop attacks for 3 min instead of 1.5",
 		"Stepping in salt leaves no UV footprints",
 		"Can teleport to a random player when not hunting",
@@ -31,20 +31,20 @@ var data = {
 		"Very fast when chasing a player during a hunt (2x normal speed)",
 		"Very slow when not chasing anyone during a hunt (1/2 of normal speed)",
 		"Less chance of ghost activity and ghost events when more than 1 player is nearby",
-		"Lower chance of initiating a hunt when more than 1 player is nearby"
+		"Lower chance of initiating a hunt when more than 1 player is nearby",
 		"Can initiate a hunt at an avarage sanity of 70%",
 		"Successful answers from the ouja board lowers sanity by 40% instead of 50%",
-		"Ghost event drop sanity by 0.4% per second instead of 0.2%",
+		"Ghost event drops sanity by 0.4% per second instead of 0.2%",
 		"Smudging will make it roam less on average for 1.5 min",
 		"Can initiate a hunt at an avarage sanity of 80% if players are talking nearby",
 		"During a hunt it only can hear sounds in a radius of 2m",
 		"Walking speed is affected by room temperature - hot 1.8 m/s, cold 1 m/s",
-		"D.O.T.S. only visibly through a video cam and no players in the room",
+		"D.O.T.S. only visible through a video cam and no players in the room",
 		"Less likely to roam when not hunting",
 		"More sounds on the parabolic mic",
 		"During a hunt footstep sounds can only be heard when 10m or closer (similar to electronic interference)",
 		"Can initiate a hunt when any flames are extinguished regardless of average sanity",
-		"Chance for the abilitie increases everytime a player is killed",
+		"Chance for the ability increases everytime a player is killed",
 		"Main twin primary stays in the ghost room, makes freezing and spirit box",
 		"Secondary twin wanders around interacting with the environment",
 		"Secondary twin cannot interact with motion sensors, spirit box or make freezing",
@@ -55,6 +55,7 @@ var data = {
 		"Can initiate a hunt at an avarage sanity of 70% if there is electrical equipment nearby",
 		"Reduced chance of 40% to leave fingerprints",
 		"Low chance to leave fingerprints with 6 fingers",
+    "Fingerprints disappear earlier (30s to 60s) than other ghosts (60s to 120s)",
 		"Objects will generally not be moved when touched"
 	],
 	"ghosts": [
@@ -97,7 +98,7 @@ var data = {
 
 				"Looking at the ghost drops sanity by 0.4% each second instead of 0.2%",
 				"Taking a photo makes the ghost temporarily disappear",
-				"Blinks slower during hunts (1s to 2s instead of 0.3s to 1s)",
+				"Blinks slower during hunts (1s to 2s instead of 0.3s to 1s)"
 			]
 		},
 		{
@@ -141,7 +142,7 @@ var data = {
 
 				"During a hunt it travels faster when chasing a target until it comes close",
 				"Can lower the sanity of all players within a certain range by 25%",
-				"Cannot use abilities when the locations power is turned off""
+				"Cannot use abilities when the locations power is turned off"
 			]
 		},
 		{
@@ -210,7 +211,7 @@ var data = {
 				"Ghost Orbs",
 				"D.O.T.S. Projector",
 
-				"Ghost event drop sanity by 0.4% per second instead of 0.2%",
+				"Ghost event drops sanity by 0.4% per second instead of 0.2%",
 				"Smudging will make it roam less on average for 1.5 min"
 			]
 		},
@@ -225,7 +226,7 @@ var data = {
 				"D.O.T.S. Projector",
 
 				"Chance to throw objects at great speeds",
-				"More ghost activity and events when more people are nearby"
+				"More ghost activity and events when there are more people are nearby"
 			]
 		},
 		{
@@ -265,7 +266,7 @@ var data = {
 				"Fingerprints",
 				"D.O.T.S. Projector",
 
-				"D.O.T.S. only visibly through a video cam and no players in the room",
+				"D.O.T.S. only visible through a video cam and no players in the room",
 				"Less likely to roam when not hunting"
 			]
 		},
@@ -294,7 +295,7 @@ var data = {
 				"Freezing Temperature",
 
 				"Can initiate a hunt when any flames are extinguished regardless of average sanity",
-				"Chance for the abilitie increases everytime a player is killed"
+				"Chance for the ability increases everytime a player is killed"
 			]
 		},
 		{
@@ -341,9 +342,10 @@ var data = {
 
 				"Reduced chance of 40% to leave fingerprints",
 				"Low chance to leave fingerprints with 6 fingers",
+    		"Fingerprints disappear earlier (30s to 60s) than other ghosts (60s to 120s)",
 				"Objects will generally not be moved when touched"
 			]
-		},
+		}
 	],
 	"voicelines": {
 		"general": [
@@ -475,7 +477,7 @@ var data = {
 			"We mean you no harm.",
 			"We are friends.",
 			"Is this you're home?",
-			"Can you speak to us?",
+			"Can you speak to us?"
 		],
 		"attacktrigger": [
 			"<The Ghosts Name>",
