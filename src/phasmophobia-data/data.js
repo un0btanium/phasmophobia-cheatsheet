@@ -1,5 +1,5 @@
-var data = {
-	"patchVersion": "October 2021",
+var data ={
+	"patchVersion": "0.4.1 November 2021",
 	"primaryevidence": [
 		"EMF Level 5",
 		"Fingerprints",
@@ -10,51 +10,54 @@ var data = {
 		"D.O.T.S. Projector"
 	],
 	"secondaryevidence": [
-		"objects moved at great speeds",
-		"more active when people are nearby",
-		"smudge stick stops attacks for a long time",
-		"flying, no footprints",
-		"toxic reaction to salt",
-		"travelling through walls",
-		"looking at the ghost drops sanity considerably",
-		"taking a photo makes the ghost temporarily disappear",
-		"summoned by a Ouija Board",
-		"possesses the living",
-		"throws multiple objects at once",
-		"targets and hunts one person at a time",
-		"scared off easily by the Crucifix",
-		"territorial ghost that attacks when threatened",
-		"travels fast when victim is far away",
-		"turning off the locations power source slows down ghost movement",
-		"most powerful in the dark",
-		"increased chance of an attack in the dark",
-		"lower chance of an attack when lights are on",
-		"travels at significantly high speeds when hunting",
-		"hiding slows down the ghost significantly",
-		"shy ghost with no activity/hunting when multiple people are nearby",
-		"attacks often and without reason",
-		"sanity is not lowered when asking successful Ouija Board questions",
-		"reduces sanity more quickly",
-		"smudging the room will stop it from wandering around for a long time",
-		"attracted to human voices",
-		"haunts family homes",
-		"talking near ghost increases chance of attack",
-		"while hunting only hears voices closeby",
-		"rare ghost, found in hot climates",
-		"attack often during cold weather",
-		"moves faster at lower temperatures",
-		"moves slower in warm areas",
-		"Only visibly through the Video Camera",
-		"Rarely seen far away from their place of death",
-		"Makes paranormal sounds",
-		"Quieter when hunting",
-		"Fears any form of fire",
-		"Attacks when flames are extinguished",
-		"Attacks alternate",
-		"Often disrupts electronic equipment",
-		"Moves faster when nearby electrical devices",
-		"Rarely leaves a trace when interacting with the environment",
-		"Ghost shapeshifts occasionally, leaving behind unique evidence"
+		"Chance to throw objects at great speeds",
+		"More ghost activity and events when there are more people are nearby",
+		"Smudge sticks stop attacks for 3 min instead of 1.5",
+		"Stepping in salt leaves no UV footprints",
+		"Can teleport to a random player when not hunting",
+		"Looking at the ghost drops sanity by 0.4% each second instead of 0.2%",
+		"Taking a photo makes the ghost temporarily disappear",
+		"Blinks slower during hunts (1s to 2s instead of 0.3s to 1s)",
+		"Throws multiple objects at once and reduces sanity by the number of thrown items times 2",
+		"Targets and hunts one player until killed (If the player is not in the building, it does a regular hunt)",
+		"Can start a hunt early regardless the avarage sanity if it sees the choosen player long enough",
+		"The Crucifixs effective radius is 5m instead of 3m",
+		"Only choosen player can finish the 'Repel a ghost while it is chasing' objective",
+		"Can lower the sanity of all players within a certain range by 25%",
+		"During a hunt it travels faster when chasing a target until it comes close",
+		"Cannot use abilities when the locations power is turned off",
+		"Can hunt at 60 % avg sanity when lights are turned off",
+		"Cannot turn on lights",
+		"Very fast when chasing a player during a hunt (2x normal speed)",
+		"Very slow when not chasing anyone during a hunt (1/2 of normal speed)",
+		"Less chance of ghost activity and ghost events when more than 1 player is nearby",
+		"Lower chance of initiating a hunt when more than 1 player is nearby",
+		"Can initiate a hunt at an avarage sanity of 70%",
+		"Successful answers from the ouja board lowers sanity by 40% instead of 50%",
+		"Ghost event drops sanity by 0.4% per second instead of 0.2%",
+		"Smudging will make it roam less on average for 1.5 min",
+		"Can initiate a hunt at an avarage sanity of 80% if players are talking nearby",
+		"During a hunt it only can hear sounds in a radius of 2m",
+		"Walking speed is affected by room temperature - hot 1.8 m/s, cold 1 m/s",
+		"D.O.T.S. only visible through a video cam and no players in the room",
+		"Less likely to roam when not hunting",
+		"Always gives the D.O.T.S. evidence on nightmare difficulty",
+		"More sounds on the parabolic mic",
+		"During a hunt footstep sounds can only be heard when 10m or closer (similar to electronic interference)",
+		"Can initiate a hunt when any flames are extinguished regardless of average sanity",
+		"Chance for the ability increases everytime a player is killed",
+		"Main twin primary stays in the ghost room, makes freezing and spirit box",
+		"Secondary twin wanders around interacting with the environment",
+		"Secondary twin cannot interact with motion sensors, spirit box or make freezing",
+		"Either Twin can initiate a Hunt but not simultaneously",
+		"While hunting it has an increased movement speed when it touches electronic equipment",
+		"It doesn't matter if the equipment lies on the floor or held by a player",
+		"Abilities only affected by player equipment and not location electrics like TVs or lights",
+		"Can initiate a hunt at an avarage sanity of 70% if there is electrical equipment nearby",
+		"Reduced chance to leave fingerprints",
+		"Low chance to leave fingerprints with 6 fingers",
+    "Fingerprints disappear earlier (60s) than other ghosts (120s)",
+		"Always gives the Fingerprints evidence on nightmare difficulty"
 	],
 	"ghosts": [
 		{
@@ -66,8 +69,8 @@ var data = {
 				"EMF Level 5",
 				"Ghost Writing",
 				"Spirit Box",
-				
-				"smudge stick stops attacks for a long time"
+
+				"Smudge sticks stop attacks for 3 min instead of 1.5"
 			]
 		},
 		{
@@ -80,9 +83,8 @@ var data = {
 				"Spirit Box",
 				"D.O.T.S. Projector",
 
-				"flying, no footprints",
-				"toxic reaction to salt",
-				"travelling through walls"
+				"Stepping in salt leaves no UV footprints",
+				"Can teleport to a random player when not hunting"
 			]
 		},
 		{
@@ -95,10 +97,9 @@ var data = {
 				"Fingerprints",
 				"D.O.T.S. Projector",
 
-				"looking at the ghost drops sanity considerably",
-				"taking a photo makes the ghost temporarily disappear",
-				"summoned by a Ouija Board",
-				"possesses the living"
+				"Looking at the ghost drops sanity by 0.4% each second instead of 0.2%",
+				"Taking a photo makes the ghost temporarily disappear",
+				"Blinks slower during hunts (1s to 2s instead of 0.3s to 1s)"
 			]
 		},
 		{
@@ -111,7 +112,7 @@ var data = {
 				"Ghost Writing",
 				"Fingerprints",
 
-				"throws multiple objects at once"
+				"Throws multiple objects at once and reduces sanity by the number of thrown items times 2"
 			]
 		},
 		{
@@ -124,8 +125,10 @@ var data = {
 				"Fingerprints",
 				"D.O.T.S. Projector",
 
-				"targets and hunts one person at a time",
-				"scared off easily by the Crucifix"
+				"Targets and hunts one player until killed (If the player is not in the building, it does a regular hunt)",
+				"Can start a hunt early regardless the avarage sanity if it sees the choosen player long enough",
+				"The Crucifixs effective radius is 5m instead of 3m",
+				"Only choosen player can finish the 'Repel a ghost while it is chasing' objective"
 			]
 		},
 		{
@@ -137,10 +140,10 @@ var data = {
 				"Freezing Temperature",
 				"EMF Level 5",
 				"Fingerprints",
-				
-				"territorial ghost that attacks when threatened",
-				"travels fast when victim is far away",
-				"turning off the locations power source slows down ghost movement"
+
+				"During a hunt it travels faster when chasing a target until it comes close",
+				"Can lower the sanity of all players within a certain range by 25%",
+				"Cannot use abilities when the locations power is turned off"
 			]
 		},
 		{
@@ -153,9 +156,8 @@ var data = {
 				"Spirit Box",
 				"Ghost Writing",
 
-				"most powerful in the dark",
-				"increased chance of an attack in the dark",
-				"lower chance of an attack when lights are on"
+				"Can hunt at 60 % avg sanity when lights are turned off",
+				"Cannot turn on lights"
 			]
 		},
 		{
@@ -167,9 +169,9 @@ var data = {
 				"Freezing Temperature",
 				"Ghost Orbs",
 				"Ghost Writing",
-				
-				"travels at significantly high speeds when hunting",
-				"hiding slows down the ghost significantly"
+
+				"Very fast when chasing a player during a hunt (2x normal speed)",
+				"Very slow when not chasing anyone during a hunt (1/2 of normal speed)"
 			]
 		},
 		{
@@ -182,7 +184,8 @@ var data = {
 				"EMF Level 5",
 				"Ghost Writing",
 
-				"shy ghost with no activity/hunting when multiple people are nearby"
+				"Less chance of ghost activity and ghost events when more than 1 player is nearby",
+				"Lower chance of initiating a hunt when more than 1 player is nearby"
 			]
 		},
 		{
@@ -195,8 +198,8 @@ var data = {
 				"Fingerprints",
 				"Ghost Writing",
 
-				"attacks often and without reason",
-				"sanity is not lowered when asking successful Ouija Board questions"
+				"Can initiate a hunt at an avarage sanity of 70%",
+				"Successful answers from the ouja board lowers sanity by 40% instead of 50%"
 			]
 		},
 		{
@@ -209,8 +212,8 @@ var data = {
 				"Ghost Orbs",
 				"D.O.T.S. Projector",
 
-				"reduces sanity more quickly",
-				"smudging the room will stop it from wandering around for a long time"
+				"Ghost event drops sanity by 0.4% per second instead of 0.2%",
+				"Smudging will make it roam less on average for 1.5 min"
 			]
 		},
 		{
@@ -223,8 +226,8 @@ var data = {
 				"EMF Level 5",
 				"D.O.T.S. Projector",
 
-				"objects moved at great speeds",
-				"more active when people are nearby"
+				"Chance to throw objects at great speeds",
+				"More ghost activity and events when there are more people are nearby"
 			]
 		},
 		{
@@ -237,10 +240,8 @@ var data = {
 				"Spirit Box",
 				"D.O.T.S. Projector",
 
-				"attracted to human voices",
-				"haunts family homes",
-				"talking near ghost increases chance of attack",
-				"while hunting only hears voices closeby"
+				"Can initiate a hunt at an avarage sanity of 80% if players are talking nearby",
+				"During a hunt it only can hear sounds in a radius of 2m"
 			]
 		},
 		{
@@ -253,10 +254,7 @@ var data = {
 				"Ghost Orbs",
 				"Fingerprints",
 
-				"rare ghost, found in hot climates",
-				"attack often during cold weather",
-				"moves faster at lower temperatures",
-				"moves slower in warm areas"
+				"Walking speed is affected by room temperature - hot 1.8 m/s, cold 1 m/s"
 			]
 		},
 		{
@@ -269,8 +267,9 @@ var data = {
 				"Fingerprints",
 				"D.O.T.S. Projector",
 
-				"Only visibly through the Video Camera",
-				"Rarely seen far away from their place of death"
+				"D.O.T.S. only visible through a video cam and no players in the room",
+				"Less likely to roam when not hunting",
+				"Always gives the D.O.T.S. evidence on nightmare difficulty"
 			]
 		},
 		{
@@ -283,8 +282,8 @@ var data = {
 				"Fingerprints",
 				"Ghost Writing",
 
-				"Makes paranormal sounds",
-				"Quieter when hunting"
+				"More sounds on the parabolic mic",
+				"During a hunt footstep sounds can only be heard when 10m or closer (similar to electronic interference)"
 			]
 		},
 		{
@@ -297,8 +296,8 @@ var data = {
 				"Ghost Orbs",
 				"Freezing Temperature",
 
-				"Fears any form of fire",
-				"Attacks when flames are extinguished"
+				"Can initiate a hunt when any flames are extinguished regardless of average sanity",
+				"Chance for the ability increases everytime a player is killed"
 			]
 		},
 		{
@@ -311,7 +310,10 @@ var data = {
 				"Spirit Box",
 				"Freezing Temperature",
 
-				"Attacks alternate"
+				"Main twin primary stays in the ghost room, makes freezing and spirit box",
+				"Secondary twin wanders around interacting with the environment",
+				"Secondary twin cannot interact with motion sensors, spirit box or make freezing",
+				"Either Twin can initiate a Hunt but not simultaneously"
 			]
 		},
 		{
@@ -324,8 +326,10 @@ var data = {
 				"Ghost Orbs",
 				"D.O.T.S. Projector",
 
-				"Often disrupts electronic equipment",
-				"Moves faster when nearby electrical devices"
+				"While hunting it has an increased movement speed when it touches electronic equipment",
+				"It doesn't matter if the equipment lies on the floor or held by a player",
+				"Abilities only affected by player equipment and not location electrics like TVs or lights",
+				"Can initiate a hunt at an avarage sanity of 70% if there is electrical equipment nearby"
 			]
 		},
 		{
@@ -338,10 +342,12 @@ var data = {
 				"Fingerprints",
 				"Ghost Orbs",
 
-				"Rarely leaves a trace when interacting with the environment",
-				"Ghost shapeshifts occasionally, leaving behind unique evidence"
+				"Reduced chance to leave fingerprints",
+				"Low chance to leave fingerprints with 6 fingers",
+		    "Fingerprints disappear earlier (60s) than other ghosts (120s)",
+				"Always gives the Fingerprints evidence on nightmare difficulty"
 			]
-		},
+		}
 	],
 	"voicelines": {
 		"general": [
@@ -473,7 +479,7 @@ var data = {
 			"We mean you no harm.",
 			"We are friends.",
 			"Is this you're home?",
-			"Can you speak to us?",
+			"Can you speak to us?"
 		],
 		"attacktrigger": [
 			"<The Ghosts Name>",
