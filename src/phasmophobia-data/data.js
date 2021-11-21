@@ -46,6 +46,7 @@ var data ={
 		"During a hunt footstep sounds can only be heard when 10m or closer (similar to electronic interference)",
 		"Can initiate a hunt when any flames are extinguished regardless of average sanity",
 		"Chance for the ability increases everytime a player is killed",
+		"Lit candles act as crucifixes. Blown out when successfuly prevented a hunt",
 		"Main twin primary stays in the ghost room, makes freezing and spirit box",
 		"Secondary twin wanders around interacting with the environment",
 		"Secondary twin cannot interact with motion sensors, spirit box or make freezing",
@@ -297,7 +298,8 @@ var data ={
 				"Freezing Temperature",
 
 				"Can initiate a hunt when any flames are extinguished regardless of average sanity",
-				"Chance for the ability increases everytime a player is killed"
+				"Chance for the ability increases everytime a player is killed",
+				"Lit candles act as crucifixes. Blown out when successfuly prevented a hunt"
 			]
 		},
 		{
