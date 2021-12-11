@@ -420,7 +420,7 @@ var data ={
 			"Are you a woman?"
 		],
 		"ouija": [
-			"You have to say 'Goodbye' before stop using it".
+			"You have to say 'Goodbye' before stop using it",
 			"Who did you kill?",
 			"Who is your victim?",
 			"What is the name of the person you killed?",
