@@ -48,13 +48,11 @@ class App extends Component {
 		for (let ghost of data.ghosts) {
 			ghost.evidence = ghost.primaryEvidences.concat(ghost.secondaryEvidences);
 			for (let primaryEvidence of ghost.primaryEvidences) {
-				console.log(data.primaryevidence)
 				if (!data.primaryevidence.includes(primaryEvidence)) {
 					data.primaryevidence.push(primaryEvidence);
 				}
 			}
 			for (let secondaryEvidence of ghost.secondaryEvidences) {
-				console.log(data.secondaryevidence)
 				if (!data.secondaryevidence.includes(secondaryEvidence)) {
 					data.secondaryevidence.push(secondaryEvidence);
 				}
