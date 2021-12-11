@@ -38,7 +38,8 @@ var data ={
 		"Smudging will make it roam less on average for 1.5 min",
 		"Can initiate a hunt at an avarage sanity of 80% if players are talking nearby",
 		"During a hunt it only can hear sounds in a radius of 2m",
-		"Walking speed is affected by room temperature - hot 1.8 m/s, cold 1 m/s",
+		"Walking speed is affected by room temperature when hunting and not chasing",
+		"1.8 m/s below 10°C/50°F - 1.4 m/s above 10°C/50°F",
 		"D.O.T.S. only visible through a video cam and no players in the room",
 		"Less likely to roam when not hunting",
 		"Always gives the D.O.T.S. evidence on nightmare difficulty",
@@ -255,7 +256,8 @@ var data ={
 				"Ghost Orbs",
 				"Fingerprints",
 
-				"Walking speed is affected by room temperature - hot 1.8 m/s, cold 1 m/s"
+				"Walking speed is affected by room temperature when hunting and not chasing",
+				"1.8 m/s below 10°C/50°F - 1.4 m/s above 10°C/50°F"
 			]
 		},
 		{
