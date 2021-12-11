@@ -31,6 +31,9 @@ class App extends Component {
   	constructor(props) {
 		super(props);
 
+		data.primaryevidence = [];
+		data.secondaryevidence = [];
+
 		let ghostNames = [];
 		let ghostsByName = {};
 		let selectedGhosts = {};
@@ -39,20 +42,37 @@ class App extends Component {
 		let selectedEvidence = {};
 		let ignoredEvidence = {};
 		let remainingEvidence = {};
-		// TODO add tooltip info for each ghost (copy ingame texts)
 
+		// TODO add tooltip info for each ghost (copy ingame texts)
+		
 		for (let ghost of data.ghosts) {
+			ghost.evidence = ghost.primaryEvidences.concat(ghost.secondaryEvidences);
+			for (let primaryEvidence of ghost.primaryEvidences) {
+				console.log(data.primaryevidence)
+				if (!data.primaryevidence.includes(primaryEvidence)) {
+					data.primaryevidence.push(primaryEvidence);
+				}
+			}
+			for (let secondaryEvidence of ghost.secondaryEvidences) {
+				console.log(data.secondaryevidence)
+				if (!data.secondaryevidence.includes(secondaryEvidence)) {
+					data.secondaryevidence.push(secondaryEvidence);
+				}
+			}
+
 			selectedGhosts[ghost.name] = false;
 			ignoredGhosts[ghost.name] = false;
 			ghostsByName[ghost.name] = ghost;
 			ghostNames.push(ghost.name);
 		}
 
+
 		let sortAlphabetically = (a, b) => {
 			if(a < b) { return -1; }
 			if(a > b) { return 1; }
 			return 0;
 		}
+		data.primaryevidence.sort(sortAlphabetically);
 		ghostNames.sort(sortAlphabetically);
 		for (let voicelineName in data.voicelines) {
 			data.voicelines[voicelineName].sort(sortAlphabetically);
@@ -108,11 +128,9 @@ class App extends Component {
 			resetSelected: this.resetSelected
 
 		};
-
 	}
 
   	render() {
-
 		return (
 			<Router>
 				<div className="full-screenable-node">
