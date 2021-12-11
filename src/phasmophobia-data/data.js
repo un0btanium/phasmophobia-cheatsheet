@@ -1,5 +1,5 @@
 var data ={
-	"patchVersion": "0.4.1 November 2021",
+	"patchVersion": "0.5.0 - Cursed Possessions",
 	"primaryevidence": [
 		"EMF Level 5",
 		"Fingerprints",
@@ -20,7 +20,7 @@ var data ={
 		"Blinks slower during hunts (1s to 2s instead of 0.3s to 1s)",
 		"Throws multiple objects at once and reduces sanity by the number of thrown items times 2",
 		"Targets and hunts one player until killed (If the player is not in the building, it does a regular hunt)",
-		"Can start a hunt early regardless the avarage sanity if it sees the choosen player long enough",
+		"Can start a hunt early regardless the avarage sanity if it sees a player long enough",
 		"The Crucifixs effective radius is 5m instead of 3m",
 		"Only choosen player can finish the 'Repel a ghost while it is chasing' objective",
 		"Can lower the sanity of all players within a certain range by 25%",
@@ -38,7 +38,8 @@ var data ={
 		"Smudging will make it roam less on average for 1.5 min",
 		"Can initiate a hunt at an avarage sanity of 80% if players are talking nearby",
 		"During a hunt it only can hear sounds in a radius of 2m",
-		"Walking speed is affected by room temperature - hot 1.8 m/s, cold 1 m/s",
+		"Walking speed is affected by room temperature when hunting and not chasing",
+		"1.8 m/s below 10°C/50°F - 1.4 m/s above 10°C/50°F",
 		"D.O.T.S. only visible through a video cam and no players in the room",
 		"Less likely to roam when not hunting",
 		"Always gives the D.O.T.S. evidence on nightmare difficulty",
@@ -127,7 +128,6 @@ var data ={
 				"D.O.T.S. Projector",
 
 				"Targets and hunts one player until killed (If the player is not in the building, it does a regular hunt)",
-				"Can start a hunt early regardless the avarage sanity if it sees the choosen player long enough",
 				"The Crucifixs effective radius is 5m instead of 3m",
 				"Only choosen player can finish the 'Repel a ghost while it is chasing' objective"
 			]
@@ -200,7 +200,8 @@ var data ={
 				"Ghost Writing",
 
 				"Can initiate a hunt at an avarage sanity of 70%",
-				"Successful answers from the ouja board lowers sanity by 40% instead of 50%"
+				"Successful answers from the ouja board lowers sanity by 40% instead of 50%",
+				"Can start a hunt early regardless the avarage sanity if it sees a player long enough",
 			]
 		},
 		{
@@ -255,7 +256,8 @@ var data ={
 				"Ghost Orbs",
 				"Fingerprints",
 
-				"Walking speed is affected by room temperature - hot 1.8 m/s, cold 1 m/s"
+				"Walking speed is affected by room temperature when hunting and not chasing",
+				"1.8 m/s below 10°C/50°F - 1.4 m/s above 10°C/50°F"
 			]
 		},
 		{
@@ -349,6 +351,19 @@ var data ={
 		    "Fingerprints disappear earlier (60s) than other ghosts (120s)",
 				"Always gives the Fingerprints evidence on nightmare difficulty"
 			]
+		},
+		{
+			"name": "The Mimic",
+			"description":"",
+			"uniquestrength": "",
+			"weaknesses": "",
+			"evidence": [
+				"Freezing Temperature",
+				"Spirit Box",
+				"Fingerprints",
+
+				"Ghost orb sightings nearby"
+			]
 		}
 	],
 	"voicelines": {
@@ -405,6 +420,7 @@ var data ={
 			"Are you a woman?"
 		],
 		"ouija": [
+			"You have to say 'Goodbye' before stop using it",
 			"Who did you kill?",
 			"Who is your victim?",
 			"What is the name of the person you killed?",
@@ -481,7 +497,9 @@ var data ={
 			"We mean you no harm.",
 			"We are friends.",
 			"Is this you're home?",
-			"Can you speak to us?"
+			"Can you speak to us?",
+			"How did you die?",
+			"Where is the bone?"
 		],
 		"attacktrigger": [
 			"<The Ghosts Name>",
