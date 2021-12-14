@@ -10,36 +10,44 @@ var data ={
 		"D.O.T.S. Projector"
 	],
 	"secondaryevidence": [
-		"Chance to throw objects at great speeds",
+		"Chance to throw objects with more force so they fly further",
 		"More ghost activity and events when there are more people are nearby",
 		"Smudge sticks stop attacks for 3 min instead of 1.5",
 		"Stepping in salt leaves no UV footprints",
-		"Can teleport to a random player when not hunting",
+		"Can teleport to a random player when not hunting which will do EMF lvl 2 or 5",
 		"Looking at the ghost drops sanity by 0.4% each second instead of 0.2%",
 		"Taking a photo makes the ghost temporarily disappear",
 		"Blinks slower during hunts (1s to 2s instead of 0.3s to 1s)",
 		"Throws multiple objects at once and reduces sanity by the number of thrown items times 2",
 		"Targets and hunts one player until killed (If the player is not in the building, it does a regular hunt)",
-		"Can start a hunt early regardless the avarage sanity if it sees a player long enough",
+		"Can start a hunt early regardless the avarage sanity",
+		"Loose less sanity (80% of original loss) by answering to the Ouija board",
 		"The Crucifixs effective radius is 5m instead of 3m",
 		"Only choosen player can finish the 'Repel a ghost while it is chasing' objective",
+		"Preferes singing ghost events over other events",
+		"Low chance for a unique sound (distorted scream) over the parabolic microphone",
+		"During a hunt it travels faster (2.1m/s) when chasing a target until a distance of 10m",
 		"Can lower the sanity of all players within a certain range by 25%",
-		"During a hunt it travels faster when chasing a target until it comes close",
 		"Cannot use abilities when the locations power is turned off",
+		"Cannot turn off the breaker directly. (Unless by turning on too many lights)"
 		"Can hunt at 60 % avg sanity when lights are turned off",
+		"This is not affected by candles, torches or other equipment",
+		"Has a chance of turning off a light immediately after it was turned on by a player",
 		"Cannot turn on lights",
 		"Very fast when chasing a player during a hunt (2x normal speed)",
 		"Very slow when not chasing anyone during a hunt (1/2 of normal speed)",
 		"Less chance of ghost activity and ghost events when more than 1 player is nearby",
-		"Lower chance of initiating a hunt when more than 1 player is nearby",
+		"Lower chance of initiating a hunt when more than 1 players are in the same room",
 		"Can initiate a hunt at an avarage sanity of 70%",
 		"Successful answers from the ouja board lowers sanity by 40% instead of 50%",
 		"Ghost event drops sanity by 0.4% per second instead of 0.2%",
-		"Smudging will make it roam less on average for 1.5 min",
+		"This also applies when a player is within 10m during a hunt",
+		"Smudging will make it to no leave the room for 1.5 min",
 		"Can initiate a hunt at an avarage sanity of 80% if players are talking nearby",
 		"During a hunt it only can hear sounds in a radius of 2m",
 		"Walking speed is affected by room temperature when hunting and not chasing",
-		"1.8 m/s below 10°C/50°F - 1.4 m/s above 10°C/50°F",
+		"Faster (1.8 m/s) below 10°C/50°F - slower (~1.4 m/s) above 10°C/50°F",
+		"Shows cold breath during a hunt in rooms with freezing temperature",
 		"D.O.T.S. only visible through a video cam and no players in the room",
 		"Less likely to roam when not hunting",
 		"Always gives the D.O.T.S. evidence on nightmare difficulty",
@@ -52,14 +60,20 @@ var data ={
 		"Secondary twin wanders around interacting with the environment",
 		"Secondary twin cannot interact with motion sensors, spirit box or make freezing",
 		"Either Twin can initiate a Hunt but not simultaneously",
+		"Crucifix only checks for main twin regardless of which will hunt",
+		"During hunts the main twin is slower (by 10%) and the decoy is faster (by 10%)",
 		"While hunting it has an increased movement speed when it touches electronic equipment",
 		"It doesn't matter if the equipment lies on the floor or held by a player",
 		"Abilities only affected by player equipment and not location electrics like TVs or lights",
+		"Head mounted cameras, motion sensors and sound sensors do not count towards the speed boost",
 		"Can initiate a hunt at an avarage sanity of 70% if there is electrical equipment nearby",
 		"Reduced chance to leave fingerprints",
 		"Low chance to leave fingerprints with 6 fingers",
-    "Fingerprints disappear earlier (60s) than other ghosts (120s)",
-		"Always gives the Fingerprints evidence on nightmare difficulty"
+		"Fingerprints have a 50% chance to disappear earlier (60s) than of other ghosts (120s)",
+		"Always gives the Fingerprints evidence on nightmare difficulty",
+		"Has ghost orbs as 4th evidence",
+		"Picks a ghost to mimic and changes it occasionally",
+		"Copies all abilities and behaviour of the picked ghost"
 	],
 	"ghosts": [
 		{
@@ -86,7 +100,7 @@ var data ={
 				"D.O.T.S. Projector",
 
 				"Stepping in salt leaves no UV footprints",
-				"Can teleport to a random player when not hunting"
+				"Can teleport to a random player when not hunting which will do EMF lvl 2 or 5"
 			]
 		},
 		{
@@ -129,7 +143,9 @@ var data ={
 
 				"Targets and hunts one player until killed (If the player is not in the building, it does a regular hunt)",
 				"The Crucifixs effective radius is 5m instead of 3m",
-				"Only choosen player can finish the 'Repel a ghost while it is chasing' objective"
+				"Only choosen player can finish the 'Repel a ghost while it is chasing' objective",
+				"Preferes singing ghost events over other events",
+				"Low chance for a unique sound (distorted scream) over the parabolic microphone"
 			]
 		},
 		{
@@ -142,9 +158,10 @@ var data ={
 				"EMF Level 5",
 				"Fingerprints",
 
-				"During a hunt it travels faster when chasing a target until it comes close",
+				"During a hunt it travels faster (2.1m/s) when chasing a target until a distance of 10m",
 				"Can lower the sanity of all players within a certain range by 25%",
-				"Cannot use abilities when the locations power is turned off"
+				"Cannot use abilities when the locations power is turned off",
+				"Cannot turn off the breaker directly. (Unless by turning on too many lights)"
 			]
 		},
 		{
@@ -158,6 +175,8 @@ var data ={
 				"Ghost Writing",
 
 				"Can hunt at 60 % avg sanity when lights are turned off",
+				"This is not affected by candles, torches or other equipment",
+				"Has a chance of turning off a light immediately after it was turned on by a player",
 				"Cannot turn on lights"
 			]
 		},
@@ -186,7 +205,7 @@ var data ={
 				"Ghost Writing",
 
 				"Less chance of ghost activity and ghost events when more than 1 player is nearby",
-				"Lower chance of initiating a hunt when more than 1 player is nearby"
+				"Lower chance of initiating a hunt when more than 1 players are in the same room"
 			]
 		},
 		{
@@ -201,7 +220,8 @@ var data ={
 
 				"Can initiate a hunt at an avarage sanity of 70%",
 				"Successful answers from the ouja board lowers sanity by 40% instead of 50%",
-				"Can start a hunt early regardless the avarage sanity if it sees a player long enough",
+				"Can start a hunt early regardless the avarage sanity",
+				"Loose less sanity (80% of original loss) by answering to the Ouija board"
 			]
 		},
 		{
@@ -215,7 +235,8 @@ var data ={
 				"D.O.T.S. Projector",
 
 				"Ghost event drops sanity by 0.4% per second instead of 0.2%",
-				"Smudging will make it roam less on average for 1.5 min"
+				"This also applies when a player is within 10m during a hunt",
+				"Smudging will make it to no leave the room for 1.5 min"
 			]
 		},
 		{
@@ -228,7 +249,7 @@ var data ={
 				"EMF Level 5",
 				"D.O.T.S. Projector",
 
-				"Chance to throw objects at great speeds",
+				"Chance to throw objects with more force so they fly further",
 				"More ghost activity and events when there are more people are nearby"
 			]
 		},
@@ -257,7 +278,8 @@ var data ={
 				"Fingerprints",
 
 				"Walking speed is affected by room temperature when hunting and not chasing",
-				"1.8 m/s below 10°C/50°F - 1.4 m/s above 10°C/50°F"
+				"Faster (1.8 m/s) below 10°C/50°F - slower (~1.4 m/s) above 10°C/50°F",
+				"Shows cold breath during a hunt in rooms with freezing temperature"
 			]
 		},
 		{
@@ -317,7 +339,9 @@ var data ={
 				"Main twin primary stays in the ghost room, makes freezing and spirit box",
 				"Secondary twin wanders around interacting with the environment",
 				"Secondary twin cannot interact with motion sensors, spirit box or make freezing",
-				"Either Twin can initiate a Hunt but not simultaneously"
+				"Either Twin can initiate a Hunt but not simultaneously",
+				"Crucifix only checks for main twin regardless of which will hunt",
+				"During hunts the main twin is slower (by 10%) and the decoy is faster (by 10%)"
 			]
 		},
 		{
@@ -333,6 +357,7 @@ var data ={
 				"While hunting it has an increased movement speed when it touches electronic equipment",
 				"It doesn't matter if the equipment lies on the floor or held by a player",
 				"Abilities only affected by player equipment and not location electrics like TVs or lights",
+				"Head mounted cameras, motion sensors and sound sensors do not count towards the speed boost",
 				"Can initiate a hunt at an avarage sanity of 70% if there is electrical equipment nearby"
 			]
 		},
@@ -348,7 +373,7 @@ var data ={
 
 				"Reduced chance to leave fingerprints",
 				"Low chance to leave fingerprints with 6 fingers",
-		    "Fingerprints disappear earlier (60s) than other ghosts (120s)",
+		    "Fingerprints have a 50% chance to disappear earlier (60s) than of other ghosts (120s)",
 				"Always gives the Fingerprints evidence on nightmare difficulty"
 			]
 		},
@@ -362,7 +387,9 @@ var data ={
 				"Spirit Box",
 				"Fingerprints",
 
-				"Ghost orb sightings nearby"
+				"Has ghost orbs as 4th evidence",
+				"Picks a ghost to mimic and changes it occasionally",
+				"Copies all abilities and behaviour of the picked ghost"
 			]
 		}
 	],
