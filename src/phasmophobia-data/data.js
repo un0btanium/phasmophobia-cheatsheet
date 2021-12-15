@@ -453,7 +453,6 @@ var data ={
 			"Are you a woman?"
 		],
 		"ouija": [
-			"You have to say 'Goodbye' before stop using it",
 			"Who did you kill?",
 			"Who is your victim?",
 			"What is the name of the person you killed?",
@@ -488,7 +487,19 @@ var data ={
 			"Are you close?",
 			"Are there any spirits?",
 			"Are you near?",
-			"Are you around?"
+			"Are you around?",
+			"Do you have a big pen**?",
+			"Do you want to play hide and seek?",
+			"Are you insym?",
+			"Where is the bone?",
+			"How many people are in this room?",
+			"Knock knock",
+			"Marco (answers polo)",
+			"What is my sanity? (Healthy >80% | Good >60% | Avg >40% | Bad >20% | Awful <20%)",
+			"How insane am I? (Not very >50% | Very >20% | Insane <20%)",
+			"Am I insane? (Maybe >0%, Yes 0%)",
+			"How did you die?",
+			"Before you stop using it, you have to say 'Goodbye'"
 		],
 		"spiritbox": [
 			"Can you speak?",
