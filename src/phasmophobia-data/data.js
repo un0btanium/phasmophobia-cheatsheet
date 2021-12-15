@@ -34,6 +34,9 @@ var data ={
 		"This is not affected by candles, torches or other equipment",
 		"Has a chance of turning off a light immediately after it was turned on by a player",
 		"Cannot turn on lights",
+		"More likely to roam to adjacent dark rooms when the lights in the current room are on",
+		"More likely to turn of lights the doing other ghost interactions",
+		"Preferes shattering lights over other ghost events",
 		"Very fast when chasing a player during a hunt (2x normal speed)",
 		"Very slow when not chasing anyone during a hunt (1/2 of normal speed)",
 		"Less chance of ghost activity and ghost events when more than 1 player is nearby",
@@ -177,7 +180,10 @@ var data ={
 				"Can hunt at 60 % avg sanity when lights are turned off",
 				"This is not affected by candles, torches or other equipment",
 				"Has a chance of turning off a light immediately after it was turned on by a player",
-				"Cannot turn on lights"
+				"Cannot turn on lights",
+				"More likely to roam to adjacent dark rooms when the lights in the current room are on",
+				"More likely to turn of lights the doing other ghost interactions",
+				"Preferes shattering lights over other ghost events"
 			]
 		},
 		{
