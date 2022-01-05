@@ -247,7 +247,7 @@ var data = {
 			"secondaryEvidences": [
 				"Reduced chance to leave fingerprints",
 				"Low chance to leave fingerprints with 6 fingers",
-		    	"Fingerprints disappear earlier (60s) than other ghosts (120s)",
+		    		"Fingerprints disappear earlier (60s) than other ghosts (120s)",
 				"Always gives the Fingerprints evidence on nightmare difficulty"
 			]
 		},
@@ -257,9 +257,13 @@ var data = {
 				"Freezing Temperature",
 				"Spirit Box",
 				"Fingerprints",
+				"Ghost Orbs",
 			],
 			"secondaryEvidences": [
-				"Ghost orb sightings nearby"
+				"Can imitate multiple features found in other ghosts.",
+				"Cannot switch ghost features mid hunt.",
+				"Can imitate almost every ghost feature in the game.",
+				"Ghost orbs are always present, regardless of the ghost being imitated."
 			]
 		}
 	],
