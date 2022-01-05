@@ -262,7 +262,7 @@ var data = {
 			"secondaryEvidences": [
 				"Reduced chance to leave fingerprints",
 				"Low chance to leave fingerprints with 6 fingers",
-        "Fingerprints have a 50% chance to disappear earlier (60s) than of other ghosts (120s)",
+				"Fingerprints have a 50% chance to disappear earlier (60s) than of other ghosts (120s)",
 				"Always gives the Fingerprints evidence on nightmare difficulty"
 			]
 		},
