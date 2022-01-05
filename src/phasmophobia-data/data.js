@@ -1,5 +1,5 @@
 var data = {
-	"patchVersion": "0.5.0 - Cursed Possessions",
+	"patchVersion": "0.5.1 - Cursed Possessions",
 
 	"ghosts": [
 		{
