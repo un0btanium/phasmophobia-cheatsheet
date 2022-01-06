@@ -1,5 +1,6 @@
 var data = {
-	"patchVersion": "0.5.0 - Cursed Possessions",
+	"patchVersion": "0.5.1 - Cursed Possessions",
+
 	"ghosts": [
 		{
 			"name": "Spirit",
@@ -21,7 +22,7 @@ var data = {
 			],
 			"secondaryEvidences": [
 				"Stepping in salt leaves no UV footprints",
-				"Can teleport to a random player when not hunting"
+				"Can teleport to a random player when not hunting which will do EMF lvl 2 or 5"
 			]
 		},
 		{
@@ -29,7 +30,7 @@ var data = {
 			"primaryEvidences": [
 				"Spirit Box",
 				"Fingerprints",
-				"D.O.T.S. Projector",
+				"D.O.T.S. Projector"
 			],
 			"secondaryEvidences": [
 				"Looking at the ghost drops sanity by 0.4% each second instead of 0.2%",
@@ -42,7 +43,7 @@ var data = {
 			"primaryEvidences": [
 				"Spirit Box",
 				"Ghost Writing",
-				"Fingerprints",
+				"Fingerprints"
 			],
 			"secondaryEvidences": [
 				"Throws multiple objects at once and reduces sanity by the number of thrown items times 2"
@@ -53,12 +54,14 @@ var data = {
 			"primaryEvidences": [
 				"Ghost Orbs",
 				"Fingerprints",
-				"D.O.T.S. Projector",
+				"D.O.T.S. Projector"
 			],
 			"secondaryEvidences": [
 				"Targets and hunts one player until killed (If the player is not in the building, it does a regular hunt)",
 				"The Crucifixs effective radius is 5m instead of 3m",
-				"Only choosen player can finish the 'Repel a ghost while it is chasing' objective"
+				"Only choosen player can finish the 'Repel a ghost while it is chasing' objective",
+				"Preferes singing ghost events over other events",
+				"Low chance for a unique sound (distorted scream) over the parabolic microphone"
 			]
 		},
 		{
@@ -66,12 +69,13 @@ var data = {
 			"primaryEvidences": [
 				"Freezing Temperature",
 				"EMF Level 5",
-				"Fingerprints",
-			],
-			"secondaryEvidences": [
-				"During a hunt it travels faster when chasing a target until it comes close",
+				"Fingerprints"
+      ],
+      "secondaryEvidences": [
+				"During a hunt it travels faster (2.1m/s) when chasing a target until a distance of 10m",
 				"Can lower the sanity of all players within a certain range by 25%",
-				"Cannot use abilities when the locations power is turned off"
+				"Cannot use abilities when the locations power is turned off",
+				"Cannot turn off the breaker directly. (Unless by turning on too many lights)"
 			]
 		},
 		{
@@ -79,11 +83,16 @@ var data = {
 			"primaryEvidences": [
 				"Ghost Orbs",
 				"Spirit Box",
-				"Ghost Writing",
+				"Ghost Writing"
 			],
 			"secondaryEvidences": [
 				"Can hunt at 60 % avg sanity when lights are turned off",
-				"Cannot turn on lights"
+				"This is not affected by candles, torches or other equipment",
+				"Has a chance of turning off a light immediately after it was turned on by a player",
+				"Cannot turn on lights",
+				"More likely to roam to adjacent dark rooms when the lights in the current room are on",
+				"More likely to turn of lights the doing other ghost interactions",
+				"Preferes shattering lights over other ghost events"
 			]
 		},
 		{
@@ -91,7 +100,7 @@ var data = {
 			"primaryEvidences": [
 				"Freezing Temperature",
 				"Ghost Orbs",
-				"Ghost Writing",
+				"Ghost Writing"
 			],
 			"secondaryEvidences": [
 				"Very fast when chasing a player during a hunt (2x normal speed)",
@@ -103,11 +112,11 @@ var data = {
 			"primaryEvidences": [
 				"Freezing Temperature",
 				"EMF Level 5",
-				"Ghost Writing",
+				"Ghost Writing"
 			],
 			"secondaryEvidences": [
 				"Less chance of ghost activity and ghost events when more than 1 player is nearby",
-				"Lower chance of initiating a hunt when more than 1 player is nearby"
+				"Lower chance of initiating a hunt when more than 1 players are in the same room"
 			]
 		},
 		{
@@ -115,12 +124,13 @@ var data = {
 			"primaryEvidences": [
 				"Freezing Temperature",
 				"Fingerprints",
-				"Ghost Writing",
+				"Ghost Writing"
 			],
 			"secondaryEvidences": [
 				"Can initiate a hunt at an avarage sanity of 70%",
 				"Successful answers from the ouja board lowers sanity by 40% instead of 50%",
-				"Can start a hunt early regardless the avarage sanity if it sees a player long enough",
+				"Can start a hunt early regardless the avarage sanity",
+				"Loose less sanity (80% of original loss) by answering to the Ouija board"
 			]
 		},
 		{
@@ -128,11 +138,12 @@ var data = {
 			"primaryEvidences": [
 				"Freezing Temperature",
 				"Ghost Orbs",
-				"D.O.T.S. Projector",
+				"D.O.T.S. Projector"
 			],
 			"secondaryEvidences": [
 				"Ghost event drops sanity by 0.4% per second instead of 0.2%",
-				"Smudging will make it roam less on average for 1.5 min"
+				"This also applies when a player is within 10m during a hunt",
+				"Smudging will make it to no leave the room for 1.5 min"
 			]
 		},
 		{
@@ -140,10 +151,10 @@ var data = {
 			"primaryEvidences": [
 				"Freezing Temperature",
 				"EMF Level 5",
-				"D.O.T.S. Projector",
+				"D.O.T.S. Projector"
 			],
 			"secondaryEvidences": [
-				"Chance to throw objects at great speeds",
+				"Chance to throw objects with more force so they fly further",
 				"More ghost activity and events when there are more people are nearby"
 			]
 		},
@@ -152,7 +163,7 @@ var data = {
 			"primaryEvidences": [
 				"Ghost Orbs",
 				"Spirit Box",
-				"D.O.T.S. Projector",
+				"D.O.T.S. Projector"
 			],
 			"secondaryEvidences": [
 				"Can initiate a hunt at an avarage sanity of 80% if players are talking nearby",
@@ -164,11 +175,12 @@ var data = {
 			"primaryEvidences": [
 				"Freezing Temperature",
 				"Ghost Orbs",
-				"Fingerprints",
+				"Fingerprints"
 			],
 			"secondaryEvidences": [
 				"Walking speed is affected by room temperature when hunting and not chasing",
-				"1.8 m/s below 10°C/50°F - 1.4 m/s above 10°C/50°F"
+				"Faster (1.8 m/s) below 10°C/50°F - slower (~1.4 m/s) above 10°C/50°F",
+				"Shows cold breath during a hunt in rooms with freezing temperature"
 			]
 		},
 		{
@@ -176,7 +188,7 @@ var data = {
 			"primaryEvidences": [
 				"EMF Level 5",
 				"Fingerprints",
-				"D.O.T.S. Projector",
+				"D.O.T.S. Projector"
 			],
 			"secondaryEvidences": [
 				"D.O.T.S. only visible through a video cam and no players in the room",
@@ -189,7 +201,7 @@ var data = {
 			"primaryEvidences": [
 				"EMF Level 5",
 				"Fingerprints",
-				"Ghost Writing",
+				"Ghost Writing"
 			],
 			"secondaryEvidences": [
 				"More sounds on the parabolic mic",
@@ -201,7 +213,7 @@ var data = {
 			"primaryEvidences": [
 				"Spirit Box",
 				"Ghost Orbs",
-				"Freezing Temperature",
+				"Freezing Temperature"
 			],
 			"secondaryEvidences": [
 				"Can initiate a hunt when any flames are extinguished regardless of average sanity",
@@ -214,13 +226,15 @@ var data = {
 			"primaryEvidences": [
 				"EMF Level 5",
 				"Spirit Box",
-				"Freezing Temperature",
+				"Freezing Temperature"
 			],
 			"secondaryEvidences": [
 				"Main twin primary stays in the ghost room, makes freezing and spirit box",
 				"Secondary twin wanders around interacting with the environment",
 				"Secondary twin cannot interact with motion sensors, spirit box or make freezing",
-				"Either Twin can initiate a Hunt but not simultaneously"
+				"Either Twin can initiate a Hunt but not simultaneously",
+				"Crucifix only checks for main twin regardless of which will hunt",
+				"During hunts the main twin is slower (by 10%) and the decoy is faster (by 10%)"
 			]
 		},
 		{
@@ -228,12 +242,13 @@ var data = {
 			"primaryEvidences": [
 				"EMF Level 5",
 				"Ghost Orbs",
-				"D.O.T.S. Projector",
+				"D.O.T.S. Projector"
 			],
 			"secondaryEvidences": [
 				"While hunting it has an increased movement speed when it touches electronic equipment",
 				"It doesn't matter if the equipment lies on the floor or held by a player",
 				"Abilities only affected by player equipment and not location electrics like TVs or lights",
+				"Head mounted cameras, motion sensors and sound sensors do not count towards the speed boost",
 				"Can initiate a hunt at an avarage sanity of 70% if there is electrical equipment nearby"
 			]
 		},
@@ -242,12 +257,12 @@ var data = {
 			"primaryEvidences": [
 				"EMF Level 5",
 				"Fingerprints",
-				"Ghost Orbs",
+				"Ghost Orbs"
 			],
 			"secondaryEvidences": [
 				"Reduced chance to leave fingerprints",
 				"Low chance to leave fingerprints with 6 fingers",
-		    	"Fingerprints disappear earlier (60s) than other ghosts (120s)",
+				"Fingerprints have a 50% chance to disappear earlier (60s) than of other ghosts (120s)",
 				"Always gives the Fingerprints evidence on nightmare difficulty"
 			]
 		},
@@ -256,10 +271,12 @@ var data = {
 			"primaryEvidences": [
 				"Freezing Temperature",
 				"Spirit Box",
-				"Fingerprints",
+				"Fingerprints"
 			],
 			"secondaryEvidences": [
-				"Ghost orb sightings nearby"
+				"Has ghost orbs as 4th evidence",
+				"Picks a ghost to mimic and changes it occasionally",
+				"Copies all abilities and behaviour of the picked ghost"
 			]
 		}
 	],
@@ -317,7 +334,6 @@ var data = {
 			"Are you a woman?"
 		],
 		"ouija": [
-			"You have to say 'Goodbye' before stop using it",
 			"Who did you kill?",
 			"Who is your victim?",
 			"What is the name of the person you killed?",
@@ -352,7 +368,19 @@ var data = {
 			"Are you close?",
 			"Are there any spirits?",
 			"Are you near?",
-			"Are you around?"
+			"Are you around?",
+			"Do you have a big pen**?",
+			"Do you want to play hide and seek?",
+			"Are you insym?",
+			"Where is the bone?",
+			"How many people are in this room?",
+			"Knock knock",
+			"Marco (answers polo)",
+			"What is my sanity? (Healthy >80% | Good >60% | Avg >40% | Bad >20% | Awful <20%)",
+			"How insane am I? (Not very >50% | Very >20% | Insane <20%)",
+			"Am I insane? (Maybe >0%, Yes 0%)",
+			"How did you die?",
+			"Before you stop using it, you have to say 'Goodbye'"
 		],
 		"spiritbox": [
 			"Can you speak?",
