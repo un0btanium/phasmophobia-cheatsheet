@@ -1,6 +1,5 @@
 var data = {
 	"patchVersion": "0.5.1 - Cursed Possessions",
-
 	"ghosts": [
 		{
 			"name": "Spirit",
@@ -70,8 +69,8 @@ var data = {
 				"Freezing Temperature",
 				"EMF Level 5",
 				"Fingerprints"
-      ],
-      "secondaryEvidences": [
+		],
+		"secondaryEvidences": [
 				"During a hunt it travels faster (2.1m/s) when chasing a target until a distance of 10m",
 				"Can lower the sanity of all players within a certain range by 25%",
 				"Cannot use abilities when the locations power is turned off",
