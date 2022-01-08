@@ -22,7 +22,8 @@ var data = {
 			],
 			"secondaryEvidences": [
 				"Stepping in salt leaves no UV footprints",
-				"Can teleport to a random player when not hunting which will do EMF lvl 2 or 5"
+				"Can become more active after stepping in salt",
+				"Can teleport to a random player (while not hunting) which will do EMF lvl 2 or 5 and do interactions"
 			]
 		},
 		{
@@ -34,8 +35,9 @@ var data = {
 			],
 			"secondaryEvidences": [
 				"Looking at the ghost drops sanity by 0.4% each second instead of 0.2%",
-				"Taking a photo makes the ghost temporarily disappear",
-				"Blinks slower during hunts (1s to 2s instead of 0.3s to 1s)"
+				"Taking a photo makes the ghost temporarily disappear (while not hunting)",
+				"Blinks slower during hunts (1s to 2s instead of 0.3s to 1s)",
+				"Can walk to a random player anywhere on the map (while not hunting) and do interactions"
 			]
 		},
 		{
@@ -46,7 +48,9 @@ var data = {
 				"Fingerprints"
 			],
 			"secondaryEvidences": [
-				"Throws multiple objects at once and reduces sanity by the number of thrown items times 2"
+				"Only ghost that can throw multiple objects at once",
+				"Every thrown object makes players loose 2% sanity instead of 1%",
+				"Very inactive in rooms without items"
 			]
 		},
 		{
@@ -58,10 +62,10 @@ var data = {
 			],
 			"secondaryEvidences": [
 				"Targets and hunts one player until killed (If the player is not in the building, it does a regular hunt)",
-				"The Crucifixs effective radius is 5m instead of 3m",
 				"Only choosen player can finish the 'Repel a ghost while it is chasing' objective",
+				"The Crucifixes effective radius is 5m instead of 3m",
 				"Preferes singing ghost events over other events",
-				"Low chance for a unique sound (distorted scream) over the parabolic microphone"
+				"Low chance for a unique sound (screetch) over the parabolic microphone"
 			]
 		},
 		{
@@ -72,9 +76,9 @@ var data = {
 				"Fingerprints"
       ],
       "secondaryEvidences": [
+				"Cannot use any abilities when the breaker is turned off",
 				"During a hunt it travels faster (2.1m/s) when chasing a target until a distance of 10m",
-				"Can lower the sanity of all players within a certain range by 25%",
-				"Cannot use abilities when the locations power is turned off",
+				"Can lower the sanity of all players within a 3m radius by 25%",
 				"Cannot turn off the breaker directly. (Unless by turning on too many lights)"
 			]
 		},
@@ -86,13 +90,13 @@ var data = {
 				"Ghost Writing"
 			],
 			"secondaryEvidences": [
-				"Can hunt at 60 % avg sanity when lights are turned off",
+				"Can hunt at 60 % avg sanity when lights in the room are turned off",
 				"This is not affected by candles, torches or other equipment",
-				"Has a chance of turning off a light immediately after it was turned on by a player",
+				"Tiny chance to turn off a light immediately after it was turned on by a player",
 				"Cannot turn on lights",
 				"More likely to roam to adjacent dark rooms when the lights in the current room are on",
 				"More likely to turn of lights the doing other ghost interactions",
-				"Preferes shattering lights over other ghost events"
+				"Preferes light events (red light & shattering) over other ghost events"
 			]
 		},
 		{
@@ -115,6 +119,7 @@ var data = {
 				"Ghost Writing"
 			],
 			"secondaryEvidences": [
+				"Can only initiate a hunt at an avarage sanity of 35%",
 				"Less chance of ghost activity and ghost events when more than 1 player is nearby",
 				"Lower chance of initiating a hunt when more than 1 players are in the same room"
 			]
@@ -128,8 +133,8 @@ var data = {
 			],
 			"secondaryEvidences": [
 				"Can initiate a hunt at an avarage sanity of 70%",
-				"Successful answers from the ouja board lowers sanity by 40% instead of 50%",
-				"Can start a hunt early regardless the avarage sanity",
+				"Insta-hunt: Low chance to start a hunt regardless the avarage sanity",
+				"Using cursed objects lowers sanity less than by other ghosts",
 				"Loose less sanity (80% of original loss) by answering to the Ouija board"
 			]
 		},
@@ -143,7 +148,8 @@ var data = {
 			"secondaryEvidences": [
 				"Ghost event drops sanity by 0.4% per second instead of 0.2%",
 				"This also applies when a player is within 10m during a hunt",
-				"Smudging will make it to no leave the room for 1.5 min"
+				"Smudging will make it to stay in the room for 1.5 min",
+				"Can close doors randomly without doing a ghost event"
 			]
 		},
 		{
@@ -166,7 +172,7 @@ var data = {
 				"D.O.T.S. Projector"
 			],
 			"secondaryEvidences": [
-				"Can initiate a hunt at an avarage sanity of 80% if players are talking nearby",
+				"Can initiate an early hunt at an avarage sanity of 80% if players are talking nearby",
 				"During a hunt it only can hear sounds in a radius of 2m"
 			]
 		},
@@ -180,7 +186,7 @@ var data = {
 			"secondaryEvidences": [
 				"Walking speed is affected by room temperature when hunting and not chasing",
 				"Faster (1.8 m/s) below 10°C/50°F - slower (~1.4 m/s) above 10°C/50°F",
-				"Shows cold breath during a hunt in rooms with freezing temperature"
+				"Shows cold breath during a hunt in the ghost room"
 			]
 		},
 		{
@@ -193,7 +199,7 @@ var data = {
 			"secondaryEvidences": [
 				"D.O.T.S. only visible through a video cam and no players in the room",
 				"Less likely to roam when not hunting",
-				"Always gives the D.O.T.S. evidence on nightmare difficulty"
+				"D.O.T.S. evidence are guaranteed on nightmare difficulty"
 			]
 		},
 		{
@@ -249,7 +255,7 @@ var data = {
 				"It doesn't matter if the equipment lies on the floor or held by a player",
 				"Abilities only affected by player equipment and not location electrics like TVs or lights",
 				"Head mounted cameras, motion sensors and sound sensors do not count towards the speed boost",
-				"Can initiate a hunt at an avarage sanity of 70% if there is electrical equipment nearby"
+				"Can initiate a hunt at an avarage sanity of 65% if there is electrical equipment nearby"
 			]
 		},
 		{
@@ -260,7 +266,7 @@ var data = {
 				"Ghost Orbs"
 			],
 			"secondaryEvidences": [
-				"Reduced chance to leave fingerprints",
+				"Reduced chance of 75% to leave fingerprints",
 				"Low chance to leave fingerprints with 6 fingers",
 				"Fingerprints have a 50% chance to disappear earlier (60s) than of other ghosts (120s)",
 				"Always gives the Fingerprints evidence on nightmare difficulty"
@@ -275,10 +281,10 @@ var data = {
 				"Ghost Orbs"
 			],
 			"secondaryEvidences": [
-				"Picks a ghost to imitate and changes it occasionally",
-				"Copies (almost) all abilities and behaviour of the picked ghost",
-				"Has ghost orbs as 4th evidence which are always present, regardless of which ghost being imitated",
-				"Cannot switch picked ghost during a hunt"
+				"Picks another ghost type to imitate and changes it occasionally",
+				"Copies almost all abilities and behaviour of the picked ghost",
+				"Cannot switch picked ghost during a hunt",
+				"Has ghost orbs as 4th evidence which are always present, regardless of which ghost being imitated"
 			]
 		}
 	],
