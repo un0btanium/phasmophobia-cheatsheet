@@ -1,6 +1,5 @@
 var data = {
 	"patchVersion": "0.5.1 - Cursed Possessions",
-
 	"ghosts": [
 		{
 			"name": "Spirit",
@@ -75,8 +74,8 @@ var data = {
 				"EMF Level 5",
 				"Fingerprints"
       ],
-      "secondaryEvidences": [
-				"Cannot use any abilities when the breaker is turned off",
+		"secondaryEvidences": [
+        "Cannot use any abilities when the breaker is turned off",
 				"During a hunt it travels faster (2.1m/s) when chasing a target until a distance of 10m",
 				"Can lower the sanity of all players within a 3m radius by 25%",
 				"Cannot turn off the breaker directly. (Unless by turning on too many lights)"
