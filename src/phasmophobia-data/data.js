@@ -271,12 +271,14 @@ var data = {
 			"primaryEvidences": [
 				"Freezing Temperature",
 				"Spirit Box",
-				"Fingerprints"
+				"Fingerprints",
+				"Ghost Orbs"
 			],
 			"secondaryEvidences": [
-				"Has ghost orbs as 4th evidence",
-				"Picks a ghost to mimic and changes it occasionally",
-				"Copies all abilities and behaviour of the picked ghost"
+				"Picks a ghost to imitate and changes it occasionally",
+				"Copies (almost) all abilities and behaviour of the picked ghost",
+				"Has ghost orbs as 4th evidence which are always present, regardless of which ghost being imitated",
+				"Cannot switch picked ghost during a hunt"
 			]
 		}
 	],
