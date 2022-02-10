@@ -1,5 +1,5 @@
 var data = {
-	"patchVersion": "0.5.1 - Cursed Possessions",
+	"patchVersion": "0.5.2 - Cursed Possessions",
 	"ghosts": [
 		{
 			"name": "Spirit",
@@ -61,10 +61,11 @@ var data = {
 			],
 			"secondaryEvidences": [
 				"Targets and hunts one player until killed (If the player is not in the building, it does a regular hunt)",
-				"Only choosen player can finish the 'Repel a ghost while it is chasing' objective",
-				"The Crucifixes effective radius is 5m instead of 3m",
+				"Only checks their targets sanity % for initiating a hunt in multiplayer",
+				"Will often wander toward their target when roaming",
+				"Singing ghost events will now drain an extra 5% sanity on the Banshee's target",
 				"Preferes singing ghost events over other events",
-				"Low chance for a unique sound (screetch) over the parabolic microphone"
+				"Can sometimes be heard wailing with a parabolic microphone"
 			]
 		},
 		{
@@ -120,7 +121,8 @@ var data = {
 			"secondaryEvidences": [
 				"Can only initiate a hunt at an avarage sanity of 35%",
 				"Less chance of ghost activity and ghost events when more than 1 player is nearby",
-				"Lower chance of initiating a hunt when more than 1 players are in the same room"
+				"Lower chance of initiating a hunt when more than 1 players are in the same room",
+				"For every 1% of average sanity lost, ghost event chance is increased by 2% (capped at 100%)"
 			]
 		},
 		{
@@ -134,6 +136,7 @@ var data = {
 				"Can initiate a hunt at an avarage sanity of 70%",
 				"Insta-hunt: Low chance to start a hunt regardless the avarage sanity",
 				"Using cursed objects lowers sanity less than by other ghosts",
+				"The Crucifixes effective radius is 5m instead of 3m",
 				"Loose less sanity (80% of original loss) by answering to the Ouija board"
 			]
 		},
@@ -183,9 +186,10 @@ var data = {
 				"Fingerprints"
 			],
 			"secondaryEvidences": [
-				"Walking speed is affected by room temperature when hunting and not chasing",
-				"Faster (1.8 m/s) below 10°C/50°F - slower (~1.4 m/s) above 10°C/50°F",
-				"Shows cold breath during a hunt in the ghost room"
+				"Walking speed is affected by room temperature when hunting",
+				"1.4 m/s= 15°C+ | 1.5 m/s= 12°C | 1.65 m/s= 9°C | 1.8 m/s= 6°C | 2.2 m/s= 3°C | 1.8 m/s= 6°C",
+				"Shows their breath in room temperatures of 3°C or lower",
+				"Has double the chance to turn off the breaker"
 			]
 		},
 		{
