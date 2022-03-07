@@ -1,5 +1,5 @@
 var data = {
-	"patchVersion": "0.5.2 - Cursed Possessions",
+	"patchVersion": "0.5.2.1 - Cursed Possessions",
 	"ghosts": [
 		{
 			"name": "Spirit",
@@ -187,9 +187,10 @@ var data = {
 			],
 			"secondaryEvidences": [
 				"Walking speed is affected by room temperature when hunting",
-				"1.4 m/s= 15°C+ | 1.5 m/s= 12°C | 1.65 m/s= 9°C | 1.8 m/s= 6°C | 2.2 m/s= 3°C | 2.5 m/s= 0°C",
+				"1.4 m/s= 15°C+ | 1.75 m/s= 12°C | 2.1 m/s= 9°C | 2.3 m/s= 6°C | 2.5 m/s= 3°C | 2.7 m/s= 0°C",
 				"Shows their breath in room temperatures of 3°C or lower",
-				"Has double the chance to turn off the breaker"
+				"Has double the chance to turn off the breaker",
+				"Can no longer turn on the breaker, as this would stop them accelerating"
 			]
 		},
 		{
