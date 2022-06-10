@@ -1,5 +1,5 @@
 var data = {
-	"patchVersion": "0.5.2.1 - Cursed Possessions",
+	"patchVersion": "0.6.2 - Truck overhaul",
 	"ghosts": [
 		{
 			"name": "Spirit",
@@ -271,7 +271,8 @@ var data = {
 			],
 			"secondaryEvidences": [
 				"Reduced chance of 75% to leave fingerprints",
-				"Low chance to leave fingerprints with 6 fingers",
+				"Low chance to leave fingerprints with 6 fingers,",
+				"double fingerprints on light switches, and 5 finger on prison doors and keyboards",
 				"Fingerprints have a 50% chance to disappear earlier (60s) than of other ghosts (120s)",
 				"Always gives the Fingerprints evidence on nightmare difficulty"
 			]
