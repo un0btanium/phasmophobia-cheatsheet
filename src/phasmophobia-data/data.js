@@ -1,5 +1,5 @@
 var data = {
-	"patchVersion": "0.6.2 - Truck overhaul",
+	"patchVersion": "0.6.2 - Truck Overhaul",
 	"ghosts": [
 		{
 			"name": "Spirit",
@@ -79,6 +79,7 @@ var data = {
         "Cannot use any abilities when the breaker is turned off",
 				"During a hunt it travels faster (2.1m/s) when chasing a target until a distance of 10m",
 				"Can lower the sanity of all players within a 3m radius by 25%",
+				"When using their ability, Jinns will leave EMF at the breaker rather than where they currently stood.",
 				"Cannot turn off the breaker directly. (Unless by turning on too many lights)"
 			]
 		},
