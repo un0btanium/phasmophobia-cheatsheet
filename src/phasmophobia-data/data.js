@@ -164,7 +164,8 @@ var data = {
 			],
 			"secondaryEvidences": [
 				"Chance to throw objects with more force so they fly further",
-				"More ghost activity and events when there are more people are nearby"
+				"More ghost activity and events when there are more people are nearby",
+				"Does not do the Ghost Myst event"
 			]
 		},
 		{
