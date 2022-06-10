@@ -63,14 +63,14 @@ code {
 
 
 .rotated45 {
-
+	overflow-x: visible;
+	white-space: nowrap;
 	transform: rotate(-45deg);
 	-o-transform: rotate(-45deg);
 	-ms-transform: rotate(-45deg);
 	-moz-transform: rotate(-45deg);
 	-webkit-transform: rotate(-45deg);
-  
-  }
+}
 
 .disableSelection {
   -ms-user-select: none;
@@ -108,7 +108,7 @@ code {
 }
 
 .evidence-header {
-	min-width: 400px;
+	min-width: 300px;
 	text-align: left;
 	margin: 5px;
 	color: white;
@@ -116,7 +116,7 @@ code {
 .evidence-header.grey {
 	color: grey;
 }
-@media screen and (max-width: 930px) {
+@media screen and (max-width: 1350px) {
 	.evidence-header {
 		min-width: 150px;
 	}
@@ -124,7 +124,7 @@ code {
 
 .ghost-header {
 	min-width: 0px;
-	min-height: 60px;
+	min-height: 50px;
 	text-align: center;
 	color: white;
 }
@@ -133,11 +133,13 @@ code {
 }
 .ghost-header.green {
 	color: #05ff37;
+	z-index: 99999;
 }
-@media screen and (max-width: 930px) {
+@media screen and (max-width: 1350px) {
 	.ghost-header {
 		padding-left: 0px !important;
 		padding-right: 0px !important;
+		min-height: 35px;
 	}
 }
 
@@ -146,11 +148,14 @@ code {
 	text-align: center;
 	margin: 5px;
 	color: white;
+	white-space: nowrap;
+	overflow-x: visible;
+	word-wrap: normal;
 }
 .ghost-evidence.grey {
 	color: grey;
 }
-@media screen and (max-width: 930px) {
+@media screen and (max-width: 1350px) {
 	.ghost-evidence {
 		padding-left: 0px !important;
 		padding-right: 0px !important;
