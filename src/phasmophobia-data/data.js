@@ -1,5 +1,5 @@
 var data = {
-	"patchVersion": "0.5.2.1 - Cursed Possessions",
+	"patchVersion": "0.6.2 - Truck Overhaul",
 	"ghosts": [
 		{
 			"name": "Spirit",
@@ -79,6 +79,7 @@ var data = {
         "Cannot use any abilities when the breaker is turned off",
 				"During a hunt it travels faster (2.1m/s) when chasing a target until a distance of 10m",
 				"Can lower the sanity of all players within a 3m radius by 25%",
+				"When using their ability, Jinns will leave EMF at the breaker rather than where they currently stood.",
 				"Cannot turn off the breaker directly. (Unless by turning on too many lights)"
 			]
 		},
@@ -163,7 +164,8 @@ var data = {
 			],
 			"secondaryEvidences": [
 				"Chance to throw objects with more force so they fly further",
-				"More ghost activity and events when there are more people are nearby"
+				"More ghost activity and events when there are more people are nearby",
+				"Does not do the Ghost Myst event"
 			]
 		},
 		{
@@ -271,7 +273,8 @@ var data = {
 			],
 			"secondaryEvidences": [
 				"Reduced chance of 75% to leave fingerprints",
-				"Low chance to leave fingerprints with 6 fingers",
+				"Low chance to leave fingerprints with 6 fingers,",
+				"double fingerprints on light switches, and 5 finger on prison doors and keyboards",
 				"Fingerprints have a 50% chance to disappear earlier (60s) than of other ghosts (120s)",
 				"Always gives the Fingerprints evidence on nightmare difficulty"
 			]
@@ -289,6 +292,45 @@ var data = {
 				"Copies almost all abilities and behaviour of the picked ghost",
 				"Cannot switch picked ghost during a hunt",
 				"Has ghost orbs as 4th evidence which are always present, regardless of which ghost being imitated"
+			]
+		},
+		{
+			"name": "Moroi",
+			"primaryEvidences": [
+				"Spirit Box",
+				"Ghost Writing",
+				"Freezing Temperature"
+			],
+			"secondaryEvidences": [
+				"The weaker their victims, the stronger it becomes",
+				"It is hyper sensitive to smells, weakening them for long periods",
+				"More to be discovered..."
+			]
+		},
+		{
+			"name": "Deogen",
+			"primaryEvidences": [
+				"Spirit Box",
+				"Ghost Writing",
+				"D.O.T.S. Projector"
+			],
+			"secondaryEvidences": [
+				"It constantly sense the living. You can run but you can't hide",
+				"It requires a lot of energy to form and will move very slowly",
+				"More to be discovered..."
+			]
+		},
+		{
+			"name": "Thaye",
+			"primaryEvidences": [
+				"Ghost Orbs",
+				"Ghost Writing",
+				"D.O.T.S. Projector"
+			],
+			"secondaryEvidences": [
+				"Upon entering the location, it will become active, defensive and agile",
+				"It will eaken over time, making them weaker, slower and less agressive",
+				"More to be discovered..."
 			]
 		}
 	],
