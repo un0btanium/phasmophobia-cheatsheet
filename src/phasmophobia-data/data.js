@@ -329,7 +329,7 @@ var data = {
 			],
 			"secondaryEvidences": [
 				"Upon entering the location, it will become active, defensive and agile",
-				"It will eaken over time, making them weaker, slower and less agressive"
+				"It will eaken over time, making them weaker, slower and less agressive",
 				"More to be discovered..."
 			]
 		}
