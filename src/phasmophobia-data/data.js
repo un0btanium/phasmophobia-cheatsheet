@@ -292,6 +292,45 @@ var data = {
 				"Cannot switch picked ghost during a hunt",
 				"Has ghost orbs as 4th evidence which are always present, regardless of which ghost being imitated"
 			]
+		},
+		{
+			"name": "Moroi",
+			"primaryEvidences": [
+				"Spirit Box",
+				"Ghost Writing",
+				"Freezing Temperature"
+			],
+			"secondaryEvidences": [
+				"The weaker their victims, the stronger it becomes",
+				"It is hyper sensitive to smells, weakening them for long periods",
+				"More to be discovered..."
+			]
+		},
+		{
+			"name": "Deogen",
+			"primaryEvidences": [
+				"Spirit Box",
+				"Ghost Writing",
+				"D.O.T.S. Projector"
+			],
+			"secondaryEvidences": [
+				"It constantly sense the living. You can run but you can't hide",
+				"It requires a lot of energy to form and will move very slowly",
+				"More to be discovered..."
+			]
+		},
+		{
+			"name": "Thaye",
+			"primaryEvidences": [
+				"Ghost Orbs",
+				"Ghost Writing",
+				"D.O.T.S. Projector"
+			],
+			"secondaryEvidences": [
+				"Upon entering the location, it will become active, defensive and agile",
+				"It will eaken over time, making them weaker, slower and less agressive"
+				"More to be discovered..."
+			]
 		}
 	],
 	"voicelines": {
