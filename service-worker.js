@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/phasmophobia-cheatsheet/precache-manifest.b2fb97ace1410c38ba9498f071851596.js"
+  "/phasmophobia-cheatsheet/precache-manifest.16938441bb6a9a1bd4ea0cbd983ebaef.js"
 );
 
 self.addEventListener('message', (event) => {
