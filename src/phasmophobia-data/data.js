@@ -302,9 +302,14 @@ var data = {
 				"Freezing Temperature"
 			],
 			"secondaryEvidences": [
-				"The weaker their victims, the stronger it becomes",
-				"It is hyper sensitive to smells, weakening them for long periods",
-				"More to be discovered..."
+				"When smudged during a hunt it wanders for around 12s",
+				"Curses any player whom it responds over the Spirit Box",
+				"Cursed players constantly loose sanity over time (0.3%/s)",
+				"When leaving the house, the sanity drain stops until entering again",
+				"A curse can only be lifted by taking sanity pills",
+				"Players can be cursed again after cured",
+				"Walking speed is affected by avarage team sanity",
+				"1.4 m/s sanity <= 45% | 1.7 m/s sanity <= 30% | 1.8 m/s sanity <= 23% | 1.95 m/s sanity <= 13% | 2.1 m/s sanity = 0%"
 			]
 		},
 		{
