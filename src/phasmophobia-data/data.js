@@ -1,5 +1,5 @@
 var data = {
-	"patchVersion": "0.6.2 - Truck Overhaul",
+	"patchVersion": "0.6.2.1 - Truck Overhaul",
 	"ghosts": [
 		{
 			"name": "Spirit",
@@ -302,9 +302,14 @@ var data = {
 				"Freezing Temperature"
 			],
 			"secondaryEvidences": [
-				"The weaker their victims, the stronger it becomes",
-				"It is hyper sensitive to smells, weakening them for long periods",
-				"More to be discovered..."
+				"When smudged during a hunt it wanders for around 12s",
+				"Curses any player whom it responds over the Spirit Box",
+				"Cursed players constantly loose sanity over time (0.3%/s)",
+				"When leaving the house, the sanity drain stops until entering again",
+				"A curse can only be lifted by taking sanity pills",
+				"Players can be cursed again after cured",
+				"Walking speed is affected by avarage team sanity",
+				"1.4 m/s sanity <= 45% | 1.7 m/s sanity <= 30% | 1.8 m/s sanity <= 23% | 1.95 m/s sanity <= 13% | 2.1 m/s sanity = 0%"
 			]
 		},
 		{
@@ -315,9 +320,11 @@ var data = {
 				"D.O.T.S. Projector"
 			],
 			"secondaryEvidences": [
-				"It constantly sense the living. You can run but you can't hide",
-				"It requires a lot of energy to form and will move very slowly",
-				"More to be discovered..."
+				"Can only initiate a hunt at an avarage sanity below 40%",
+				"Targets the closest player (not line of sight but really the closest player)",
+				"Moves very rapidly to its target (2.7 m/s) ignoring wherever the player hides",
+				"Approx. 4m before its target it becomes super slow",
+				"Unique Spirit Box interaction: Heavy breathing. You must stand on the exact position of the ghost"
 			]
 		},
 		{
@@ -328,9 +335,10 @@ var data = {
 				"D.O.T.S. Projector"
 			],
 			"secondaryEvidences": [
-				"Upon entering the location, it will become active, defensive and agile",
-				"It will eaken over time, making them weaker, slower and less agressive",
-				"More to be discovered..."
+				"Can initiate a hunt at an avarage sanity of 70% but decreases with age",
+				"At its oldest age it only can initiate a hunt at an avarage sanity below 15%",
+				"Ages over time while a player is either in the same room as the ghost or in the ghost room",
+				"Becomes less active and slower the older it gets"
 			]
 		}
 	],
