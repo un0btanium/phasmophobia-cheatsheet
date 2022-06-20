@@ -330,9 +330,10 @@ var data = {
 				"D.O.T.S. Projector"
 			],
 			"secondaryEvidences": [
-				"Upon entering the location, it will become active, defensive and agile",
-				"It will eaken over time, making them weaker, slower and less agressive",
-				"More to be discovered..."
+				"Can initiate a hunt at an avarage sanity of 70% but decreases with age",
+				"At its oldest age it only can initiate a hunt at an avarage sanity below 15%",
+				"Ages over time while a player is either in the same room as the ghost or in the ghost room",
+				"Becomes less active and slower the older it gets",
 			]
 		}
 	],
