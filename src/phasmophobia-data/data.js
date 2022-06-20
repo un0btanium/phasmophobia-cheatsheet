@@ -315,9 +315,11 @@ var data = {
 				"D.O.T.S. Projector"
 			],
 			"secondaryEvidences": [
-				"It constantly sense the living. You can run but you can't hide",
-				"It requires a lot of energy to form and will move very slowly",
-				"More to be discovered..."
+				"Can only initiate a hunt at an avarage sanity below 40%",
+				"Targets the closest player (not line of sight but really the closest player)",
+				"Moves very rapidly to its target (2.7 m/s) ignoring wherever the player hides",
+				"Approx. 4m before its target it becomes super slow",
+				"Unique Spirit Box interaction: Heavy breathing. You must stand on the exact position of the ghost"
 			]
 		},
 		{
