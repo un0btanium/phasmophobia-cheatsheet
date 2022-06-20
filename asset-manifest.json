@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/phasmophobia-cheatsheet/static/css/main.5b5269c2.chunk.css",
-    "main.js": "/phasmophobia-cheatsheet/static/js/main.96635052.chunk.js",
-    "main.js.map": "/phasmophobia-cheatsheet/static/js/main.96635052.chunk.js.map",
+    "main.css": "/phasmophobia-cheatsheet/static/css/main.a8b7d310.chunk.css",
+    "main.js": "/phasmophobia-cheatsheet/static/js/main.00ee26b2.chunk.js",
+    "main.js.map": "/phasmophobia-cheatsheet/static/js/main.00ee26b2.chunk.js.map",
     "runtime-main.js": "/phasmophobia-cheatsheet/static/js/runtime-main.35471a59.js",
     "runtime-main.js.map": "/phasmophobia-cheatsheet/static/js/runtime-main.35471a59.js.map",
     "static/css/2.d9ad5f5c.chunk.css": "/phasmophobia-cheatsheet/static/css/2.d9ad5f5c.chunk.css",
     "static/js/2.4b69d617.chunk.js": "/phasmophobia-cheatsheet/static/js/2.4b69d617.chunk.js",
     "static/js/2.4b69d617.chunk.js.map": "/phasmophobia-cheatsheet/static/js/2.4b69d617.chunk.js.map",
     "index.html": "/phasmophobia-cheatsheet/index.html",
-    "precache-manifest.16938441bb6a9a1bd4ea0cbd983ebaef.js": "/phasmophobia-cheatsheet/precache-manifest.16938441bb6a9a1bd4ea0cbd983ebaef.js",
+    "precache-manifest.23cf061b3820c6dba0732eef5f817d54.js": "/phasmophobia-cheatsheet/precache-manifest.23cf061b3820c6dba0732eef5f817d54.js",
     "service-worker.js": "/phasmophobia-cheatsheet/service-worker.js",
     "static/css/2.d9ad5f5c.chunk.css.map": "/phasmophobia-cheatsheet/static/css/2.d9ad5f5c.chunk.css.map",
-    "static/css/main.5b5269c2.chunk.css.map": "/phasmophobia-cheatsheet/static/css/main.5b5269c2.chunk.css.map",
+    "static/css/main.a8b7d310.chunk.css.map": "/phasmophobia-cheatsheet/static/css/main.a8b7d310.chunk.css.map",
     "static/js/2.4b69d617.chunk.js.LICENSE.txt": "/phasmophobia-cheatsheet/static/js/2.4b69d617.chunk.js.LICENSE.txt",
     "static/media/ghost.svg": "/phasmophobia-cheatsheet/static/media/ghost.c97139a7.svg"
   },
@@ -20,7 +20,7 @@
     "static/js/runtime-main.35471a59.js",
     "static/css/2.d9ad5f5c.chunk.css",
     "static/js/2.4b69d617.chunk.js",
-    "static/css/main.5b5269c2.chunk.css",
-    "static/js/main.96635052.chunk.js"
+    "static/css/main.a8b7d310.chunk.css",
+    "static/js/main.00ee26b2.chunk.js"
   ]
 }
