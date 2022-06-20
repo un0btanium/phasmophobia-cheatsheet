@@ -1,5 +1,5 @@
 var data = {
-	"patchVersion": "0.6.2 - Truck Overhaul",
+	"patchVersion": "0.6.2.1 - Truck Overhaul",
 	"ghosts": [
 		{
 			"name": "Spirit",
@@ -338,7 +338,7 @@ var data = {
 				"Can initiate a hunt at an avarage sanity of 70% but decreases with age",
 				"At its oldest age it only can initiate a hunt at an avarage sanity below 15%",
 				"Ages over time while a player is either in the same room as the ghost or in the ghost room",
-				"Becomes less active and slower the older it gets",
+				"Becomes less active and slower the older it gets"
 			]
 		}
 	],
