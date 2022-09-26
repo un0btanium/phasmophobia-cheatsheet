@@ -220,7 +220,7 @@ var data = {
 			],
 			"secondaryEvidences": [
 				"More sounds on the parabolic mic",
-				"During a hunt footstep sounds can only be heard when 10m or closer (similar to electronic interference)"
+				"During a hunt all hunting sounds can only be heard when 10m or closer"
 			]
 		},
 		{
