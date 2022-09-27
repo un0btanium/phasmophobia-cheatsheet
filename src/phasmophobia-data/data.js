@@ -1,5 +1,5 @@
 var data = {
-	"patchVersion": "0.6.2.1 - Truck Overhaul",
+	"patchVersion": "0.7.0.0 - Apocalypse",
 	"ghosts": [
 		{
 			"name": "Spirit",
@@ -47,9 +47,11 @@ var data = {
 				"Fingerprints"
 			],
 			"secondaryEvidences": [
+				"Chance to throw objects with more force so they fly further (2 - 6 power, instead of 1 - 3 power)",
 				"Only ghost that can throw multiple objects at once",
 				"Every thrown object makes players loose 2% sanity instead of 1%",
-				"Very inactive in rooms without items"
+				"Very inactive in rooms without items",
+				"While hunting, guaranteed to throw an object in range every 0.5 seconds"
 			]
 		},
 		{
@@ -74,11 +76,11 @@ var data = {
 				"Freezing Temperature",
 				"EMF Level 5",
 				"Fingerprints"
-      ],
-		"secondaryEvidences": [
-        "Cannot use any abilities when the breaker is turned off",
+      		],
+			"secondaryEvidences": [
+		        "Cannot use any abilities when the breaker is turned off",
 				"During a hunt it travels faster (2.1m/s) when chasing a target until a distance of 10m",
-				"Can lower the sanity of all players within a 3m radius by 25%",
+				"Ability: Can lower the sanity of all players by 25%, when within a 3m radius or in the same room as the ghost",
 				"When using their ability, Jinns will leave EMF at the breaker rather than where they currently stood.",
 				"Cannot turn off the breaker directly. (Unless by turning on too many lights)"
 			]
@@ -163,9 +165,10 @@ var data = {
 				"D.O.T.S. Projector"
 			],
 			"secondaryEvidences": [
-				"Chance to throw objects with more force so they fly further",
 				"More ghost activity and events when there are more people are nearby",
-				"Does not do the Ghost Myst event"
+				"Does not do the Ghost Myst event",
+				"Drains double the sanity of a normal ghost during ghost events",
+				"Can be seen for longer periods of time when flickering during hunts"
 			]
 		},
 		{
@@ -204,7 +207,7 @@ var data = {
 			],
 			"secondaryEvidences": [
 				"D.O.T.S. only visible through a video cam and no players in the room",
-				"Less likely to roam when not hunting",
+				"Less likely to roam when not hunting (half the chance of other ghosts)",
 				"D.O.T.S. evidence are guaranteed on nightmare difficulty"
 			]
 		},
@@ -217,7 +220,7 @@ var data = {
 			],
 			"secondaryEvidences": [
 				"More sounds on the parabolic mic",
-				"During a hunt footstep sounds can only be heard when 10m or closer (similar to electronic interference)"
+				"During a hunt all hunting sounds can only be heard when 10m or closer"
 			]
 		},
 		{
