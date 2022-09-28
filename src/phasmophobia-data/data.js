@@ -1,5 +1,5 @@
 var data = {
-	"patchVersion": "0.7.0.1 - Apocalypse",
+	"patchVersion": "0.7.0.0 - Apocalypse",
 	"ghosts": [
 		{
 			"name": "Spirit",

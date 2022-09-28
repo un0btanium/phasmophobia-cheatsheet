@@ -175,10 +175,6 @@ class App extends Component {
 						
 							/>}
 						/>
-						<Route exact path="/phasmophobia-cheatsheet/photorewards" render={(props) => <PhotoRewardsPage {...props} 
-							
-							/>}
-						/>
 						<Route render={(props) => <MainPage {...props}
 								{...this.state}
 							/>}
