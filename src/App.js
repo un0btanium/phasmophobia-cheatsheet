@@ -13,6 +13,7 @@ import MainPage from './components/pages/main-page.component';
 import VoiceLinesPage from './components/pages/voice-lines-page.component';
 import AboutPage from './components/pages/about-page.component';
 import ContactPage from './components/pages/contact-page.component';
+import PhotoRewardsPage from './components/pages/photo-rewards.component';
 
 import data from './phasmophobia-data/data.js';
 
@@ -145,6 +146,7 @@ class App extends Component {
 							<Nav className="mr-auto">
 								<Nav.Link as={Link} variant="light" to="/phasmophobia-cheatsheet/ghostsandevidence"><b>Ghosts & Evidence</b></Nav.Link>
 								<Nav.Link as={Link} variant="light" to="/phasmophobia-cheatsheet/voicelines"><b>Voicelines</b></Nav.Link>
+								<Nav.Link as={Link} variant="light" to="/phasmophobia-cheatsheet/photorewards"><b>Photo Rewards</b></Nav.Link>
 							</Nav>
 
 							<Nav>
@@ -171,6 +173,10 @@ class App extends Component {
 						/>
 						<Route exact path="/phasmophobia-cheatsheet/contact" render={(props) => <ContactPage {...props}
 						
+							/>}
+						/>
+						<Route exact path="/phasmophobia-cheatsheet/photorewards" render={(props) => <PhotoRewardsPage {...props} 
+
 							/>}
 						/>
 						<Route render={(props) => <MainPage {...props}
