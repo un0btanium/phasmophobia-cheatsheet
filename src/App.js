@@ -104,7 +104,26 @@ class App extends Component {
 
 		this.state = {
 			showAllSecondaryEvidence: false,
-
+			photos: {
+				1 : { id: 1, type: "None", rating: 0, money: 0 },
+				2 : { id: 2, type: "None", rating: 0, money: 0 },
+				3 : { id: 3, type: "None", rating: 0, money: 0 },
+				4 : { id: 4, type: "None", rating: 0, money: 0 },
+				5 : { id: 5, type: "None", rating: 0, money: 0 },
+				6 : { id: 6, type: "None", rating: 0, money: 0 },
+				7 : { id: 7, type: "None", rating: 0, money: 0 },
+				8 : { id: 8, type: "None", rating: 0, money: 0 },
+				9 : { id: 9, type: "None", rating: 0, money: 0 },
+				10 : { id: 10, type: "None", rating: 0, money: 0 }
+			  }, photoinfo: {
+			   'ghost-photo-taken': false,
+			   'bone-photo-taken': false,
+			   'crucifix-photos-taken': 0,
+			   'deadbody-photos-taken': 0,
+			   'cursed-possession-photos-taken': 0,
+			   'ghost-writing-photos-taken': 0
+			}, totalmoney: 0,
+			
 			data: data,
 
 			ghostNames: ghostNames,
@@ -167,15 +186,15 @@ class App extends Component {
 								{...this.state}
 							/>}
 						/>
+						<Route exact path="/phasmophobia-cheatsheet/photorewards" render={(props) => <PhotoRewardsPage {...props}
+								{...this.state}
+							/>}
+						/>
 						<Route exact path="/phasmophobia-cheatsheet/about" render={(props) => <AboutPage {...props}
 						
 							/>}
 						/>
 						<Route exact path="/phasmophobia-cheatsheet/contact" render={(props) => <ContactPage {...props}
-						
-							/>}
-						/>
-						<Route exact path="/phasmophobia-cheatsheet/photorewards" render={(props) => <PhotoRewardsPage {...props}
 						
 							/>}
 						/>
