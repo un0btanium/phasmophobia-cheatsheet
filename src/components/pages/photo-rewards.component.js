@@ -164,6 +164,13 @@ export default class PhotoRewardsPage extends Component {
         8 : { id: 8, type: "None", rating: 0, money: 0 },
         9 : { id: 9, type: "None", rating: 0, money: 0 },
         10 : { id: 10, type: "None", rating: 0, money: 0 }
+      }, photoinfo: {
+      'ghost-photo-taken': false,
+      'bone-photo-taken': false,
+      'crucifix-photos-taken': 0,
+      'deadbody-photos-taken': 0,
+      'cursed-possession-photos-taken': 0,
+      'ghost-writing-photos-taken': 0
       }, totalmoney: 0});
     }
     
