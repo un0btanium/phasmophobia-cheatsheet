@@ -2,45 +2,52 @@ import React, {Component} from 'react';
 import { Button } from 'react-bootstrap';
 
 export default class PhotoRewardsPage extends Component {
-    constructor() {
-        super();
-        if(this.state === undefined)
-        {
-        }
-        this.state = { photos: {
-             1 : { id: 1, type: "None", rating: 0, money: 0 },
-             2 : { id: 2, type: "None", rating: 0, money: 0 },
-             3 : { id: 3, type: "None", rating: 0, money: 0 },
-             4 : { id: 4, type: "None", rating: 0, money: 0 },
-             5 : { id: 5, type: "None", rating: 0, money: 0 },
-             6 : { id: 6, type: "None", rating: 0, money: 0 },
-             7 : { id: 7, type: "None", rating: 0, money: 0 },
-             8 : { id: 8, type: "None", rating: 0, money: 0 },
-             9 : { id: 9, type: "None", rating: 0, money: 0 },
-             10 : { id: 10, type: "None", rating: 0, money: 0 }
-           }, phototypes: {
-             'None': { 3 : 0, 2 : 0, 1 : 0, 0 : 0 },
-             'Dead Body' : { 3 : 5, 2 : 2, 1 : 1, 0 : 0 },
-             'Interaction' : { 3 : 5, 2 : 2, 1 : 1, 0 : 0 },
-             'Fingerprint' : { 3 : 5, 2 : 2, 1 : 1, 0 : 0 },
-             'Footstep' : { 3 : 5, 2 : 2, 1 : 1, 0 : 0 },
-             'Cursed Possession' : { 3 : 5, 2 : 2, 1 : 1, 0 : 0 },
-             'Salt Pile' : { 3 : 5, 2 : 2, 1 : 1, 0 : 0 },
-             'Dots' : { 3 : 5, 2 : 2, 1 : 1, 0 : 0 },
-             'Ghost Writing' : { 3 : 5, 2 : 2, 1 : 1, 0 : 0 },
-             'Used Crucifix' : { 3 : 10, 2 : 5, 1 : 2, 0 : 0 },
-             'Dirty Water' : { 3 : 10, 2 : 5, 1 : 2, 0 : 0 },
-             'Bone' : { 3 : 10, 2 : 5, 1 : 2, 0 : 0 },
-             'Ghost' : { 3 : 20, 2 : 10, 1 : 5, 0 : 0 }
-           }, photoinfo: {
-              'ghost-photo-taken': false,
-              'bone-photo-taken': false,
-              'crucifix-photos-taken': 0,
-              'deadbody-photos-taken': 0,
-              'cursed-possession-photos-taken': 0,
-              'ghost-writing-photos-taken': 0
-           }, totalmoney: 0
-           };
+    constructor(props) {
+        super(props);
+        //console.log(JSON.stringify(props))
+        var state = {photos: {
+          1 : { id: 1, type: "None", rating: 0, money: 0 },
+          2 : { id: 2, type: "None", rating: 0, money: 0 },
+          3 : { id: 3, type: "None", rating: 0, money: 0 },
+          4 : { id: 4, type: "None", rating: 0, money: 0 },
+          5 : { id: 5, type: "None", rating: 0, money: 0 },
+          6 : { id: 6, type: "None", rating: 0, money: 0 },
+          7 : { id: 7, type: "None", rating: 0, money: 0 },
+          8 : { id: 8, type: "None", rating: 0, money: 0 },
+          9 : { id: 9, type: "None", rating: 0, money: 0 },
+          10 : { id: 10, type: "None", rating: 0, money: 0 }
+        }, photoinfo: {
+         'ghost-photo-taken': false,
+         'bone-photo-taken': false,
+         'crucifix-photos-taken': 0,
+         'deadbody-photos-taken': 0,
+         'cursed-possession-photos-taken': 0,
+         'ghost-writing-photos-taken': 0
+      }, totalmoney: 0, phototypes: {
+        'None': { 3 : 0, 2 : 0, 1 : 0, 0 : 0 },
+        'Dead Body' : { 3 : 5, 2 : 2, 1 : 1, 0 : 0 },
+        'Interaction' : { 3 : 5, 2 : 2, 1 : 1, 0 : 0 },
+        'Fingerprint' : { 3 : 5, 2 : 2, 1 : 1, 0 : 0 },
+        'Footstep' : { 3 : 5, 2 : 2, 1 : 1, 0 : 0 },
+        'Cursed Possession' : { 3 : 5, 2 : 2, 1 : 1, 0 : 0 },
+        'Salt Pile' : { 3 : 5, 2 : 2, 1 : 1, 0 : 0 },
+        'Dots' : { 3 : 5, 2 : 2, 1 : 1, 0 : 0 },
+        'Ghost Writing' : { 3 : 5, 2 : 2, 1 : 1, 0 : 0 },
+        'Used Crucifix' : { 3 : 10, 2 : 5, 1 : 2, 0 : 0 },
+        'Dirty Water' : { 3 : 10, 2 : 5, 1 : 2, 0 : 0 },
+        'Bone' : { 3 : 10, 2 : 5, 1 : 2, 0 : 0 },
+        'Ghost' : { 3 : 20, 2 : 10, 1 : 5, 0 : 0 }
+      }};
+      if(props.photoinfo !== undefined){
+        state.photoinfo = props.photoinfo;
+      }
+      if(props.photos !== undefined){
+        state.photos = props.photos;
+      }
+      if(props.totalmoney !== undefined){
+        state.totalmoney = props.totalmoney;
+      }
+        this.state = state;
         this.handleChange = this.handleChange.bind(this);
         this.ClearPhotos = this.ClearPhotos.bind(this);
       }
