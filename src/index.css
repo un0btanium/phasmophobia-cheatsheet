@@ -59,8 +59,12 @@ code {
 }
 
 
-
-
+.selection-box :hover {
+	opacity: 0.8;
+}
+.selectionbox {
+	opacity: 1;
+}
 
 .rotated45 {
 	overflow-x: visible;
