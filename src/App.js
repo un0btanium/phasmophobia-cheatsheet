@@ -29,7 +29,7 @@ const PATCH_VERSION = data.patchVersion;
 class App extends Component {
 
 
-  	constructor(props) {
+	constructor(props) {
 		super(props);
 
 		data.primaryevidence = [];
@@ -43,9 +43,11 @@ class App extends Component {
 		let selectedEvidence = {};
 		let ignoredEvidence = {};
 		let remainingEvidence = {};
+		
+		let photoTypeAmount = {}
 
 		// TODO add tooltip info for each ghost (copy ingame texts)
-		
+
 		for (let ghost of data.ghosts) {
 			ghost.evidence = ghost.primaryEvidences.concat(ghost.secondaryEvidences);
 			for (let primaryEvidence of ghost.primaryEvidences) {
@@ -67,8 +69,8 @@ class App extends Component {
 
 
 		let sortAlphabetically = (a, b) => {
-			if(a < b) { return -1; }
-			if(a > b) { return 1; }
+			if (a < b) { return -1; }
+			if (a > b) { return 1; }
 			return 0;
 		}
 		data.primaryevidence.sort(sortAlphabetically);
@@ -76,19 +78,19 @@ class App extends Component {
 		for (let voicelineName in data.voicelines) {
 			data.voicelines[voicelineName].sort(sortAlphabetically);
 		}
-		
+
 		for (let evidence of data.primaryevidence) {
 			selectedEvidence[evidence] = false;
 			ignoredEvidence[evidence] = false;
 			remainingEvidence[evidence] = true;
 		}
-		
+
 		for (let evidence of data.secondaryevidence) {
 			selectedEvidence[evidence] = false;
 			ignoredEvidence[evidence] = false;
 			remainingEvidence[evidence] = true;
 		}
-		
+
 
 		for (let ghostName of ghostNames) {
 			ghostHasEvidence[ghostName] = {};
@@ -97,50 +99,33 @@ class App extends Component {
 			}
 		}
 		
+		
+		let photos = {
+			1: {
+				id: 1,
+				type: "None",
+				rating: 0,
+				money: 0
+			}
+		};
+
+		for (let photoType in data.photoTypeMoneyReward) {
+			photoTypeAmount[photoType] = 0;
+		}
+		
 
 		this.onEvidenceClick = this.onEvidenceClick.bind(this);
-		this.handleChange = this.handleChange.bind(this);
-		this.clearPhotos = this.clearPhotos.bind(this);
+		this.resetEvidence = this.resetEvidence.bind(this);
 		this.toggleSetting = this.toggleSetting.bind(this);
-		this.resetSelected = this.resetSelected.bind(this);
-		
-		
+
+		this.onPhotoGhostTypeChange = this.onPhotoGhostTypeChange.bind(this);
+		this.onPhotoRatingChange = this.onPhotoRatingChange.bind(this);
+		this.resetPhotos = this.resetPhotos.bind(this);
+
+
 		this.state = {
 			showAllSecondaryEvidence: false,
-			photos: {
-				1 : { id: 1, type: "None", rating: 0, money: 0 },
-				2 : { id: 2, type: "None", rating: 0, money: 0 },
-				3 : { id: 3, type: "None", rating: 0, money: 0 },
-				4 : { id: 4, type: "None", rating: 0, money: 0 },
-				5 : { id: 5, type: "None", rating: 0, money: 0 },
-				6 : { id: 6, type: "None", rating: 0, money: 0 },
-				7 : { id: 7, type: "None", rating: 0, money: 0 },
-				8 : { id: 8, type: "None", rating: 0, money: 0 },
-				9 : { id: 9, type: "None", rating: 0, money: 0 },
-				10 : { id: 10, type: "None", rating: 0, money: 0 }
-			  }, photoinfo: {
-			   'ghost-photo-taken': false,
-			   'bone-photo-taken': false,
-			   'crucifix-photos-taken': 0,
-			   'deadbody-photos-taken': 0,
-			   'cursed-possession-photos-taken': 0,
-			   'ghost-writing-photos-taken': 0
-			}, totalmoney: 0, phototypes: {
-				'None': { 3 : 0, 2 : 0, 1 : 0, 0 : 0 },
-				'Dead Body' : { 3 : 5, 2 : 2, 1 : 1, 0 : 0 },
-				'Interaction' : { 3 : 5, 2 : 2, 1 : 1, 0 : 0 },
-				'Fingerprint' : { 3 : 5, 2 : 2, 1 : 1, 0 : 0 },
-				'Footstep' : { 3 : 5, 2 : 2, 1 : 1, 0 : 0 },
-				'Cursed Possession' : { 3 : 5, 2 : 2, 1 : 1, 0 : 0 },
-				'Salt Pile' : { 3 : 5, 2 : 2, 1 : 1, 0 : 0 },
-				'Dots' : { 3 : 5, 2 : 2, 1 : 1, 0 : 0 },
-				'Ghost Writing' : { 3 : 5, 2 : 2, 1 : 1, 0 : 0 },
-				'Used Crucifix' : { 3 : 10, 2 : 5, 1 : 2, 0 : 0 },
-				'Dirty Water' : { 3 : 10, 2 : 5, 1 : 2, 0 : 0 },
-				'Bone' : { 3 : 10, 2 : 5, 1 : 2, 0 : 0 },
-				'Ghost' : { 3 : 20, 2 : 10, 1 : 5, 0 : 0 }
-			  },
-			
+
 			data: data,
 
 			ghostNames: ghostNames,
@@ -157,21 +142,31 @@ class App extends Component {
 			selectedSecondaryEvidenceAmount: 0,
 
 			ghostHasEvidence: ghostHasEvidence,
-			
+
+
+			photos: photos,
+			totalMoney: 0,
+			photoTypeAmount: photoTypeAmount,
+			photoTypeMoneyReward: data.photoTypeMoneyReward,
+			photoTypeMaxAmount: data.photoTypeMaxAmount,
+
+
 			onEvidenceClick: this.onEvidenceClick,
 			toggleSetting: this.toggleSetting,
-			resetSelected: this.resetSelected,
-			handleChange: this.handleChange,
-			clearPhotos: this.clearPhotos
+			resetEvidence: this.resetEvidence,
+			
+			onPhotoGhostTypeChange: this.onPhotoGhostTypeChange,
+			onPhotoRatingChange: this.onPhotoRatingChange,
+			resetPhotos: this.resetPhotos
 		};
 	}
 
-  	render() {
+	render() {
 		return (
 			<Router>
 				<div className="full-screenable-node">
-					<Navbar bg={BG} variant={VARIANT} expand="xl" style={{ boxShadow: '0px 2px 5px #000000'}}>
-						<Navbar.Brand style={{ marginLeft: "15%"}}>
+					<Navbar bg={BG} variant={VARIANT} expand="xl" style={{ boxShadow: '0px 2px 5px #000000' }}>
+						<Navbar.Brand style={{ marginLeft: "15%" }}>
 							<a href={"http://" + WEBSITE_URL}>
 								<img src={logo} width="35" height="35" alt="Logo" />
 								<b>{' Phasmophobia CheatSheet'}</b>
@@ -179,7 +174,7 @@ class App extends Component {
 						</Navbar.Brand>
 
 						<Navbar.Toggle aria-controls="basic-navbar-nav" />
-						<Navbar.Collapse id="basic-navbar-nav" style={{ marginRight: "10%"}}>
+						<Navbar.Collapse id="basic-navbar-nav" style={{ marginRight: "10%" }}>
 							<Nav className="mr-auto">
 								<Nav.Link as={Link} variant="light" to="/phasmophobia-cheatsheet/ghostsandevidence"><b>Ghosts & Evidence</b></Nav.Link>
 								<Nav.Link as={Link} variant="light" to="/phasmophobia-cheatsheet/voicelines"><b>Voicelines</b></Nav.Link>
@@ -189,34 +184,40 @@ class App extends Component {
 							<Nav>
 								<Nav.Link as={Link} variant="light" to="/phasmophobia-cheatsheet/about"><b>About</b></Nav.Link>
 								<Nav.Link as={Link} variant="light" to="/phasmophobia-cheatsheet/contact"><b>Contact</b></Nav.Link>
-								<Navbar.Text style={{ color: "rgb(223, 105, 26)", marginLeft: "20px"}}><b>Patch <i>{PATCH_VERSION}</i></b></Navbar.Text>
+								<Navbar.Text style={{ color: "rgb(223, 105, 26)", marginLeft: "20px" }}><b>Patch <i>{PATCH_VERSION}</i></b></Navbar.Text>
 								{/* <Form inline style={{marginLeft: "20px"}}><Form.Check id="toggleIsFullScreen" type="checkbox" className="custom-switch" custom="true" label="Go Fullscreen" checked={this.state.isFullScreen} onChange={(e) => this.toggleSetting("isFullScreen")} /></Form> */}
 							</Nav>
 						</Navbar.Collapse>
 					</Navbar>
 
 					<Switch>
-						<Route exact path="/phasmophobia-cheatsheet/ghostsandevidence" render={(props) => <MainPage {...props}
+						<Route exact path="/phasmophobia-cheatsheet/ghostsandevidence" render=
+							{(props) => <MainPage {...props}
 								{...this.state}
 							/>}
 						/>
-						<Route exact path="/phasmophobia-cheatsheet/voicelines" render={(props) => <VoiceLinesPage {...props}
+						<Route exact path="/phasmophobia-cheatsheet/voicelines" render=
+							{(props) => <VoiceLinesPage {...props}
 								{...this.state}
 							/>}
 						/>
-						<Route exact path="/phasmophobia-cheatsheet/photorewards" render={(props) => <PhotoRewardsPage {...props}
+						<Route exact path="/phasmophobia-cheatsheet/photorewards" render=
+							{(props) => <PhotoRewardsPage {...props}
 								{...this.state}
 							/>}
 						/>
-						<Route exact path="/phasmophobia-cheatsheet/about" render={(props) => <AboutPage {...props}
-						
+						<Route exact path="/phasmophobia-cheatsheet/about" render=
+							{(props) => <AboutPage {...props}
+
 							/>}
 						/>
-						<Route exact path="/phasmophobia-cheatsheet/contact" render={(props) => <ContactPage {...props}
-						
+						<Route exact path="/phasmophobia-cheatsheet/contact" render=
+							{(props) => <ContactPage {...props}
+
 							/>}
 						/>
-						<Route render={(props) => <MainPage {...props}
+						<Route render=
+							{(props) => <MainPage {...props}
 								{...this.state}
 							/>}
 						/>
@@ -242,12 +243,12 @@ class App extends Component {
 
 
 	/* Grid */
-	
+
 	onEvidenceClick(e, evidence) {
 		e.preventDefault();
 
-		let selectedEvidence = {...this.state.selectedEvidence};
-		let ignoredEvidence = {...this.state.ignoredEvidence};
+		let selectedEvidence = { ...this.state.selectedEvidence };
+		let ignoredEvidence = { ...this.state.ignoredEvidence };
 
 		if (e.type === 'click') {
 			selectedEvidence[evidence] = !selectedEvidence[evidence];
@@ -260,7 +261,7 @@ class App extends Component {
 				selectedEvidence[evidence] = false;
 			}
 		}
-		
+
 
 		let selectedEvidenceAmount = 0;
 		let selectedSecondaryEvidenceAmount = 0;
@@ -315,18 +316,18 @@ class App extends Component {
 			selectedEvidence: selectedEvidence,
 			ignoredEvidence: ignoredEvidence,
 			remainingEvidence: remainingEvidence,
-			
+
 			selectedGhostAmount: selectedGhostAmount,
 			selectedEvidenceAmount: selectedEvidenceAmount,
 			selectedSecondaryEvidenceAmount: selectedSecondaryEvidenceAmount
 		});
 	}
 
-	resetSelected() {
+	resetEvidence() {
 		let selectedGhosts = {};
 		let ignoredGhosts = {};
-		let selectedEvidence = {...this.state.selectedEvidence};
-		let ignoredEvidence = {...this.state.ignoredEvidence};
+		let selectedEvidence = { ...this.state.selectedEvidence };
+		let ignoredEvidence = { ...this.state.ignoredEvidence };
 		let remainingEvidence = {};
 
 		for (let ghost of data.ghosts) {
@@ -339,157 +340,114 @@ class App extends Component {
 			ignoredEvidence[evidence] = false;
 			remainingEvidence[evidence] = true;
 		}
-		
+
 		for (let evidence of data.secondaryevidence) {
 			selectedEvidence[evidence] = false;
 			ignoredEvidence[evidence] = false;
 			remainingEvidence[evidence] = true;
 		}
-		
-		
+
+
 		this.setState({
 			selectedGhosts: selectedGhosts,
 			ignoredGhosts: ignoredGhosts,
 			selectedEvidence: selectedEvidence,
 			ignoredEvidence: ignoredEvidence,
 			remainingEvidence: remainingEvidence,
-			
+
 			selectedGhostAmount: 0,
 			selectedEvidenceAmount: 0,
 			selectedSecondaryEvidenceAmount: 0
 		});
 	}
 
-	/* photo rewards*/
-	handleChange(event, id, type, button){
-		if(type === undefined)
-		{
-		  console.error('Type undefined.') //error only
-		  return;
-		}
-  
-		//local values
-		var photos = this.state.photos;
-		var value;
-  
-		// if we changed the photo type
-		if(type === 'type'){
-		  value = event.target.value;
-		  var oldvalue = this.state.photos[id].type;
-		  var photoinfo = this.state.photoinfo;
-		  if(oldvalue === value){
+	onPhotoGhostTypeChange(photoId, newGhostType) {
+		var photos = { ...this.state.photos};
+		var photoTypeAmount = { ...this.state.photoTypeAmount};
+
+		var oldGhostType = photos[photoId].type;
+		if (oldGhostType === newGhostType) {
 			return;
-		  }
-		  switch (value){
-			case "Ghost":
-			  if(photoinfo['ghost-photo-taken'] === true){ // Only 1 ghost photo allowed.
-				return;
-			  }
-			  photoinfo['ghost-photo-taken'] = true;
-			  break;
-			case "Bone":
-			  if(photoinfo['bone-photo-taken'] === true){ // Only 1 bone photo allowed.
-				return;
-			  }
-			  photoinfo['bone-photo-taken'] = true;
-			  break;
-			case "Used Crucifix":
-			  if(photoinfo['crucifix-photos-taken'] >= 4){ // Only 4 possible crucifix photos allowed.
-				return;
-			  }
-			  photoinfo['crucifix-photos-taken'] += 1;
-			  break;
-			case "Dead Body":
-			  if (photoinfo['deadbody-photos-taken'] >= 3){ // Only 3 dead body photos possible (if 4 people die, nobody is alive to take the 4th photo)
-				return;
-			  }
-			  photoinfo['deadbody-photos-taken'] += 1;
-			  break;
-			case "Cursed Possession":
-			  if(photoinfo['cursed-possession-photos-taken'] >= 6){ // Only 6 cursed possessions to take a photo of.
-				return;
-			  }
-			  photoinfo['cursed-possession-photos-taken'] += 1;
-			  break;
-			case "Ghost Writing":
-			  if(photoinfo['ghost-writing-photos-taken'] >= 2){ // Only 2 journals that the ghost could write in
-				return;
-			  }
-			  photoinfo['ghost-writing-photos-taken'] += 1;
-			  break;
-		  }
-		  switch(oldvalue) { // Ensure that something has actually changed before changing these variables. 
-			case "Ghost":
-			  photoinfo['ghost-photo-taken'] = false;
-			  break;
-			case "Bone":
-			  photoinfo['bone-photo-taken'] = false;
-			  break;
-			case "Used Crucifix":
-			  photoinfo['crucifix-photos-taken'] -= 1;
-			  break;
-			case "Dead Body":
-			  photoinfo['deadbody-photos-taken'] -= 1;
-			  break;
-			case "Cursed Possession":
-			  photoinfo['cursed-possession-photos-taken'] -= 1;
-			  break;
-			case "Ghost Writing":
-			  photoinfo['ghost-writing-photos-taken'] -= 1;
-			  break;
-		  }
-		  
-		  this.setState({photoinfo: photoinfo})
-  
-		  if(value === "None"){ // if selecting 'none', the rating will be set to 0 (greyed out).
-			photos[id].rating = 0;
-		  } else if(value !== "None")
-		  {
-			photos[id].rating = 3; // if selecting a different photo type, the default rating is set to 3, so it cannot be greyed out.
-		  }
-  
-  
-		  photos[id].type = value; // updates the value.
-		  photos[id].money = this.state.phototypes[value][photos[id].rating];
-  
-		  
-		  this.setState({photos: photos});
-		} else {
-		  if(photos[id].type === "None"){
-			return;
-		  }
-		  value = button;
-		  photos[id].rating = value;
-		  photos[id].money = this.state.phototypes[photos[id].type][value];
-		  this.setState({photos: photos});
 		}
-		var totalmoney = 0;
-		Object.values(this.state.photos).forEach((x) => {
-		  totalmoney += x.money;
-		})
-		this.setState({totalmoney: totalmoney})
-	  }
-	  clearPhotos(){
-		this.setState({photos: {
-		  1 : { id: 1, type: "None", rating: 0, money: 0 },
-		  2 : { id: 2, type: "None", rating: 0, money: 0 },
-		  3 : { id: 3, type: "None", rating: 0, money: 0 },
-		  4 : { id: 4, type: "None", rating: 0, money: 0 },
-		  5 : { id: 5, type: "None", rating: 0, money: 0 },
-		  6 : { id: 6, type: "None", rating: 0, money: 0 },
-		  7 : { id: 7, type: "None", rating: 0, money: 0 },
-		  8 : { id: 8, type: "None", rating: 0, money: 0 },
-		  9 : { id: 9, type: "None", rating: 0, money: 0 },
-		  10 : { id: 10, type: "None", rating: 0, money: 0 }
-		}, photoinfo: {
-		'ghost-photo-taken': false,
-		'bone-photo-taken': false,
-		'crucifix-photos-taken': 0,
-		'deadbody-photos-taken': 0,
-		'cursed-possession-photos-taken': 0,
-		'ghost-writing-photos-taken': 0
-		}, totalmoney: 0});
-	  }
+
+		let maxAmount = this.state.photoTypeMaxAmount[newGhostType];
+		if (maxAmount !== -1 && photoTypeAmount[newGhostType] >= maxAmount) { // ghost type has a limit &  limit already hit
+			return;
+		}
+		photoTypeAmount[newGhostType] += 1;
+		photoTypeAmount[oldGhostType] -= 1;
+
+		photos[photoId].type = newGhostType;
+		photos[photoId].rating = (newGhostType === "None") ? 0 : 3;
+		photos[photoId].money = this.state.photoTypeMoneyReward[newGhostType][photos[photoId].rating];
+
+		var totalMoney = 0;
+		Object.values(photos).forEach((photo) => {
+			totalMoney += photo.money;
+		});
+
+		let photosAmount = Object.keys(photos).length
+		if (photoId === photosAmount) {
+			photos[photosAmount+1] = {
+				id: photosAmount+1,
+				type: "None",
+				rating: 0,
+				money: 0
+			};
+		}
+
+		this.setState({
+			photos: photos,
+			photoTypeAmount: photoTypeAmount,
+			totalMoney: totalMoney
+		});
+	}
+
+	onPhotoRatingChange(photoId, newRating) {
+		if (this.state.photos[photoId].type === "None") {
+			return;
+		}
+
+		let photos = { ...this.state.photos};
+
+		photos[photoId].rating = newRating;
+		photos[photoId].money = this.state.photoTypeMoneyReward[photos[photoId].type][newRating];
+		
+		var totalMoney = 0;
+		Object.values(photos).forEach((photo) => {
+			totalMoney += photo.money;
+		});
+
+		this.setState({
+			photos: photos,
+			totalMoney: totalMoney
+		});
+	}
+
+
+	resetPhotos() {
+		let photoTypeAmount = {};
+		for (let photoType in data.photoTypeMoneyReward) {
+			photoTypeAmount[photoType] = 0;
+		}
+
+		let photos = {
+			1: {
+				id: 1,
+				type: "None",
+				rating: 0,
+				money: 0
+			}
+		};
+
+		this.setState(
+			{
+				photos: photos,
+				photoTypeAmount: photoTypeAmount,
+				totalMoney: 0
+			}
+		);
+	}
 
 }
 

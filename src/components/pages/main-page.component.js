@@ -124,7 +124,7 @@ export default class MainGridPage extends Component {
 					</Row>
 					<Row>
 						<Col className={"evidence-header"}>
-							<Button variant="danger" onClick={() => this.props.resetSelected()}>Unselect All Evidence</Button>
+							<Button variant="danger" onClick={() => this.props.resetEvidence()}>Unselect All Evidence</Button>
 						</Col>
 					</Row>
 					<Row style={{ width:"100%" }}>

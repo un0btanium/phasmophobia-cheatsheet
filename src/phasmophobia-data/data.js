@@ -1,5 +1,35 @@
 var data = {
 	"patchVersion": "0.7.0.0 - Apocalypse",
+	"photoTypeMoneyReward": {
+		"None": [0, 0, 0, 0],
+		"Dead Body": [0, 1, 2, 5],
+		"Interaction": [0, 1, 2, 5],
+		"Fingerprint": [0, 1, 2, 5],
+		"Footstep": [0, 1, 2, 5],
+		"Cursed Possession": [0, 1, 2, 5],
+		"Salt Pile": [0, 1, 2, 5],
+		"Dots": [0, 1, 2, 5],
+		"Ghost Writing": [0, 1, 2, 5],
+		"Used Crucifix": [0, 2, 5, 10],
+		"Dirty Water": [0, 2, 5, 10],
+		"Bone": [0, 2, 5, 10],
+		"Ghost": [0, 5, 10, 20]
+	},
+	"photoTypeMaxAmount": {
+		"None": -1,
+		"Dead Body": 3,
+		"Interaction": -1,
+		"Fingerprint": -1,
+		"Footstep": -1,
+		"Cursed Possession": 6,
+		"Salt Pile": -1,
+		"Dots": -1,
+		"Ghost Writing": 2,
+		"Used Crucifix": 4,
+		"Dirty Water": -1,
+		"Bone": 1,
+		"Ghost": 1
+	},
 	"ghosts": [
 		{
 			"name": "Spirit",
