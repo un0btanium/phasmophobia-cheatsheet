@@ -294,7 +294,8 @@ var data = {
 				"It doesn't matter if the equipment lies on the floor or held by a player",
 				"Abilities only affected by player equipment and not location electrics like TVs or lights",
 				"Head mounted cameras, motion sensors and sound sensors do not count towards the speed boost",
-				"Can initiate a hunt at an avarage sanity of 65% if there is electrical equipment nearby"
+				"Can initiate a hunt at an avarage sanity of 65% if there is electrical equipment nearby",
+				"Hunting affects light flicker for a longer range than oder ghosts (15 m instead of 10 m)"
 			]
 		},
 		{
