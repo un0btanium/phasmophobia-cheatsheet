@@ -1,5 +1,5 @@
 var data = {
-	"patchVersion": "0.7.0.0 - Apocalypse",
+	"patchVersion": "0.8.0.0 - Tempest",
 	"photoTypeMoneyReward": {
 		"None": [0, 0, 0, 0],
 		"Dead Body": [0, 1, 2, 5],
