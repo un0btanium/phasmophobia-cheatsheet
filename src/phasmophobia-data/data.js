@@ -141,7 +141,9 @@ var data = {
 			],
 			"secondaryEvidences": [
 				"Very fast when chasing a player during a hunt (2x normal speed)",
-				"Very slow when not chasing anyone during a hunt (1/2 of normal speed)"
+				"Very slow when not chasing anyone during a hunt (1/2 of normal speed)",
+				"When it loses line of sight during a hunt it keeps their increaased speed until reaching the targets last known position",
+				"Their speed will decrease gradually over 2.7 seconds"
 			]
 		},
 		{
