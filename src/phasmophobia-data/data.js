@@ -50,8 +50,8 @@ var data = {
 				"D.O.T.S. Projector"
 			],
 			"secondaryEvidences": [
-				"Stepping in salt leaves no UV footprints",
-				"Can become more active after stepping in salt",
+				"Cannot step into salt and will never leave fotprints",
+				"Cannot have the 'Step into salt'-objective",
 				"Can teleport to a random player (while not hunting) which will do EMF lvl 2 or 5 and do interactions"
 			]
 		},
