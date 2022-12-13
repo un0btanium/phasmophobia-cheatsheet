@@ -306,6 +306,8 @@ var data = {
 				"Ghost Orbs"
 			],
 			"secondaryEvidences": [
+				"During a hunt it has a 6.66% chance each time it flickers to shapeshift into a different ghost form and back",
+				"Shapeshift is guaranteed to happen at least once per hunt",
 				"Reduced chance of 75% to leave fingerprints",
 				"Low chance to leave fingerprints with 6 fingers,",
 				"double fingerprints on light switches, and 5 finger on prison doors and keyboards",
