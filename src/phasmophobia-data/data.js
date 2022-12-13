@@ -186,7 +186,8 @@ var data = {
 				"Ghost event drops sanity by 0.4% per second instead of 0.2%",
 				"This also applies when a player is within 10m during a hunt",
 				"Smudging will make it to stay in the room for 1.5 min",
-				"Can close doors randomly without doing a ghost event"
+				"Can close doors randomly without doing a ghost event",
+				"Cannot use their ability when there is no door in its current room"
 			]
 		},
 		{
