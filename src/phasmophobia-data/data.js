@@ -239,8 +239,8 @@ var data = {
 			],
 			"secondaryEvidences": [
 				"D.O.T.S. only visible through a video cam and no players in the room",
-				"Less likely to roam when not hunting (half the chance of other ghosts)",
-				"D.O.T.S. evidence are guaranteed on nightmare difficulty"
+				"D.O.T.S. evidence are guaranteed on nightmare difficulty",
+				"Cannot change favorite room or roam long distances"
 			]
 		},
 		{
