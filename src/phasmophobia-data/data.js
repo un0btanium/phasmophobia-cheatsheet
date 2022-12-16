@@ -1,5 +1,5 @@
 var data = {
-	"patchVersion": "0.7.0.0 - Apocalypse",
+	"patchVersion": "0.8.0.0 - Tempest",
 	"photoTypeMoneyReward": {
 		"None": [0, 0, 0, 0],
 		"Dead Body": [0, 1, 2, 5],
@@ -50,8 +50,8 @@ var data = {
 				"D.O.T.S. Projector"
 			],
 			"secondaryEvidences": [
-				"Stepping in salt leaves no UV footprints",
-				"Can become more active after stepping in salt",
+				"Cannot step into salt and will never leave fotprints",
+				"Cannot have the 'Step into salt'-objective",
 				"Can teleport to a random player (while not hunting) which will do EMF lvl 2 or 5 and do interactions"
 			]
 		},
@@ -141,7 +141,9 @@ var data = {
 			],
 			"secondaryEvidences": [
 				"Very fast when chasing a player during a hunt (2x normal speed)",
-				"Very slow when not chasing anyone during a hunt (1/2 of normal speed)"
+				"Very slow when not chasing anyone during a hunt (1/2 of normal speed)",
+				"When it loses line of sight during a hunt it keeps their increaased speed until reaching the targets last known position",
+				"Their speed will decrease gradually over 2.7 seconds"
 			]
 		},
 		{
@@ -184,7 +186,8 @@ var data = {
 				"Ghost event drops sanity by 0.4% per second instead of 0.2%",
 				"This also applies when a player is within 10m during a hunt",
 				"Smudging will make it to stay in the room for 1.5 min",
-				"Can close doors randomly without doing a ghost event"
+				"Can close doors randomly without doing a ghost event",
+				"Cannot use their ability when there is no door in its current room"
 			]
 		},
 		{
@@ -223,7 +226,7 @@ var data = {
 			"secondaryEvidences": [
 				"Walking speed is affected by room temperature when hunting",
 				"1.4 m/s= 15°C+ | 1.75 m/s= 12°C | 2.1 m/s= 9°C | 2.3 m/s= 6°C | 2.5 m/s= 3°C | 2.7 m/s= 0°C",
-				"Shows their breath in room temperatures of 3°C or lower",
+				"Shows their breath on the ghost model in any room during hunts if the breaker is off",
 				"Has double the chance to turn off the breaker",
 				"Can no longer turn on the breaker, as this would stop them accelerating"
 			]
@@ -237,8 +240,8 @@ var data = {
 			],
 			"secondaryEvidences": [
 				"D.O.T.S. only visible through a video cam and no players in the room",
-				"Less likely to roam when not hunting (half the chance of other ghosts)",
-				"D.O.T.S. evidence are guaranteed on nightmare difficulty"
+				"D.O.T.S. evidence are guaranteed on nightmare difficulty",
+				"Cannot change favorite room or roam long distances"
 			]
 		},
 		{
@@ -294,7 +297,8 @@ var data = {
 				"It doesn't matter if the equipment lies on the floor or held by a player",
 				"Abilities only affected by player equipment and not location electrics like TVs or lights",
 				"Head mounted cameras, motion sensors and sound sensors do not count towards the speed boost",
-				"Can initiate a hunt at an avarage sanity of 65% if there is electrical equipment nearby"
+				"Can initiate a hunt at an avarage sanity of 65% if there is electrical equipment nearby",
+				"Hunting affects light flicker for a longer range than oder ghosts (15 m instead of 10 m)"
 			]
 		},
 		{
@@ -305,6 +309,8 @@ var data = {
 				"Ghost Orbs"
 			],
 			"secondaryEvidences": [
+				"During a hunt it has a 6.66% chance each time it flickers to shapeshift into a different ghost form and back",
+				"Shapeshift is guaranteed to happen at least once per hunt",
 				"Reduced chance of 75% to leave fingerprints",
 				"Low chance to leave fingerprints with 6 fingers,",
 				"double fingerprints on light switches, and 5 finger on prison doors and keyboards",
