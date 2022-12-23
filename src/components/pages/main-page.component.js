@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button, ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
 
 
 export default class MainGridPage extends Component {
@@ -50,7 +50,7 @@ export default class MainGridPage extends Component {
 		// SECONDARY EVIDENCE GRID
 		let index = 0;
 		let secondaryEvidenceGrid = null;
-		if (this.props.selectedEvidenceAmount > 1 || this.props.selectedSecondaryEvidenceAmount > 0 || this.props.showAllSecondaryEvidence) {
+		if (this.props.selectedEvidenceAmount >= this.props.showAllSecondaryEvidenceThreshold || this.props.selectedSecondaryEvidenceAmount > 0) {
 			secondaryEvidenceGrid = this.props.data.secondaryevidence.map((evidence) => {
 				let isVisible = false;
 				for (let ghostName of this.props.ghostNames) {
@@ -60,7 +60,7 @@ export default class MainGridPage extends Component {
 					}
 				}
 
-				if (isVisible || this.props.ignoredEvidence[evidence] || this.props.selectedEvidence[evidence] || this.props.showAllSecondaryEvidence) {
+				if (isVisible || this.props.ignoredEvidence[evidence] || this.props.selectedEvidence[evidence] || this.props.showAllSecondaryEvidenceThreshold === 0) {
 					let rowHeader = <Col
 						className={"evidence-header" + (this.props.remainingEvidence[evidence] ? "" : " grey")}
 						key={"header-" + evidence}>{evidence}
@@ -114,6 +114,13 @@ export default class MainGridPage extends Component {
 			return <Col className={"ghost-header" + additionalStyle} key={"header-" + ghostName}><div className="rotated45">{ghostName}</div></Col>
 		});
 
+		let thresholdOptions = [
+			{ text: "Always show secondary evidence", threshold: 0 },
+			{ text: "At least 1 evidence selected", threshold: 1 },
+			{ text: "At least 2", threshold: 2 },
+			{ text: "At least 3", threshold: 3 }
+		]
+
 		return <div style={{ display: "inline-block", width: "100%", height:"100%"}}>
 			<div style={{ display: "flex", alignItems: "center", justifyContent: "center", margin: "25px 0px 15px 0px" }}>
 				<Container style={{ padding:"0", margin:"20px", marginTop: "0px", maxWidth:"100000px"}}>
@@ -127,21 +134,24 @@ export default class MainGridPage extends Component {
 							<Button variant="danger" onClick={() => this.props.resetEvidence()}>Unselect All Evidence</Button>
 						</Col>
 					</Row>
-					<Row style={{ width:"100%" }}>
+					<Row style={{ width:"100%", position: "sticky", top: "40px" }}>
 						<Col className={"evidence-header"}>EVIDENCE</Col>
 						{columnHeaders}
 					</Row>
 					{grid}
-					<Form.Check
-						id="toggleSecondaryEvidence"
-						draggable={false}
-						type="checkbox"
-						custom="true"
-						label="Always show all Secondary Evidence"
-						checked={this.props.showAllSecondaryEvidence}
-						style={{ margin: "15px"}}
-						onChange={(e) => this.props.toggleSetting("showAllSecondaryEvidence")}
-					/>
+					<ToggleButtonGroup type="radio" className="mb-2" name="threshold-setting" defaultValue={this.props.showAllSecondaryEvidenceThreshold} style={{ margin: "15px"}}>
+						{thresholdOptions.map((option) => (
+							<ToggleButton
+								key={option.threshold}
+								id={`radio-${option.threshold}`}
+								variant="secondary"
+								value={option.threshold}
+								onChange={(e) => this.props.setSetting("showAllSecondaryEvidenceThreshold", option.threshold)}
+							>
+								{option.text}
+							</ToggleButton>
+						))}
+					</ToggleButtonGroup>
 					{secondaryEvidenceGrid !== null &&
 						<Row style={{ width:"100%", marginTop: "25px" }}>
 							<Col className={"evidence-header"}>SECONDARY EVIDENCE</Col>

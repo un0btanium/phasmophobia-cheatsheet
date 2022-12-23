@@ -116,7 +116,7 @@ class App extends Component {
 
 		this.onEvidenceClick = this.onEvidenceClick.bind(this);
 		this.resetEvidence = this.resetEvidence.bind(this);
-		this.toggleSetting = this.toggleSetting.bind(this);
+		this.setSetting = this.setSetting.bind(this);
 
 		this.onPhotoGhostTypeChange = this.onPhotoGhostTypeChange.bind(this);
 		this.onPhotoRatingChange = this.onPhotoRatingChange.bind(this);
@@ -124,7 +124,7 @@ class App extends Component {
 
 
 		this.state = {
-			showAllSecondaryEvidence: false,
+			showAllSecondaryEvidenceThreshold: parseInt(this.loadSetting("showAllSecondaryEvidenceThreshold", "1")),
 
 			data: data,
 
@@ -152,7 +152,7 @@ class App extends Component {
 
 
 			onEvidenceClick: this.onEvidenceClick,
-			toggleSetting: this.toggleSetting,
+			setSetting: this.setSetting,
 			resetEvidence: this.resetEvidence,
 			
 			onPhotoGhostTypeChange: this.onPhotoGhostTypeChange,
@@ -185,7 +185,6 @@ class App extends Component {
 								<Nav.Link as={Link} variant="light" to="/phasmophobia-cheatsheet/about"><b>About</b></Nav.Link>
 								<Nav.Link as={Link} variant="light" to="/phasmophobia-cheatsheet/contact"><b>Contact</b></Nav.Link>
 								<Navbar.Text style={{ color: "rgb(223, 105, 26)", marginLeft: "20px" }}><b>Patch <i>{PATCH_VERSION}</i></b></Navbar.Text>
-								{/* <Form inline style={{marginLeft: "20px"}}><Form.Check id="toggleIsFullScreen" type="checkbox" className="custom-switch" custom="true" label="Go Fullscreen" checked={this.state.isFullScreen} onChange={(e) => this.toggleSetting("isFullScreen")} /></Form> */}
 							</Nav>
 						</Navbar.Collapse>
 					</Navbar>
@@ -233,11 +232,15 @@ class App extends Component {
 		e.preventDefault();
 	}
 
-	toggleSetting(key) {
-		localStorage.setItem(key, !this.state[key]);
+	setSetting(key, value) {
+		localStorage.setItem(key, value);
 		this.setState({
-			[key]: !this.state[key]
+			[key]: value
 		});
+	}
+
+	loadSetting(key, defaultValue) {
+		return localStorage.getItem(key) || defaultValue;
 	}
 
 
