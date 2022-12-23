@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/phasmophobia-cheatsheet/static/css/main.e7f2c887.chunk.css",
-    "main.js": "/phasmophobia-cheatsheet/static/js/main.063f418f.chunk.js",
-    "main.js.map": "/phasmophobia-cheatsheet/static/js/main.063f418f.chunk.js.map",
+    "main.js": "/phasmophobia-cheatsheet/static/js/main.9ac770ad.chunk.js",
+    "main.js.map": "/phasmophobia-cheatsheet/static/js/main.9ac770ad.chunk.js.map",
     "runtime-main.js": "/phasmophobia-cheatsheet/static/js/runtime-main.0a6e9a4a.js",
     "runtime-main.js.map": "/phasmophobia-cheatsheet/static/js/runtime-main.0a6e9a4a.js.map",
     "static/css/2.4173a4ba.chunk.css": "/phasmophobia-cheatsheet/static/css/2.4173a4ba.chunk.css",
-    "static/js/2.1df176c3.chunk.js": "/phasmophobia-cheatsheet/static/js/2.1df176c3.chunk.js",
-    "static/js/2.1df176c3.chunk.js.map": "/phasmophobia-cheatsheet/static/js/2.1df176c3.chunk.js.map",
+    "static/js/2.d4acc9f3.chunk.js": "/phasmophobia-cheatsheet/static/js/2.d4acc9f3.chunk.js",
+    "static/js/2.d4acc9f3.chunk.js.map": "/phasmophobia-cheatsheet/static/js/2.d4acc9f3.chunk.js.map",
     "index.html": "/phasmophobia-cheatsheet/index.html",
-    "precache-manifest.e655570821ab29f4b383d4a4f04aaf23.js": "/phasmophobia-cheatsheet/precache-manifest.e655570821ab29f4b383d4a4f04aaf23.js",
+    "precache-manifest.eb6ecb4dedc98febc32d8498a29cd4d2.js": "/phasmophobia-cheatsheet/precache-manifest.eb6ecb4dedc98febc32d8498a29cd4d2.js",
     "service-worker.js": "/phasmophobia-cheatsheet/service-worker.js",
     "static/css/2.4173a4ba.chunk.css.map": "/phasmophobia-cheatsheet/static/css/2.4173a4ba.chunk.css.map",
     "static/css/main.e7f2c887.chunk.css.map": "/phasmophobia-cheatsheet/static/css/main.e7f2c887.chunk.css.map",
-    "static/js/2.1df176c3.chunk.js.LICENSE.txt": "/phasmophobia-cheatsheet/static/js/2.1df176c3.chunk.js.LICENSE.txt",
+    "static/js/2.d4acc9f3.chunk.js.LICENSE.txt": "/phasmophobia-cheatsheet/static/js/2.d4acc9f3.chunk.js.LICENSE.txt",
     "static/media/ghost.svg": "/phasmophobia-cheatsheet/static/media/ghost.c97139a7.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.0a6e9a4a.js",
     "static/css/2.4173a4ba.chunk.css",
-    "static/js/2.1df176c3.chunk.js",
+    "static/js/2.d4acc9f3.chunk.js",
     "static/css/main.e7f2c887.chunk.css",
-    "static/js/main.063f418f.chunk.js"
+    "static/js/main.9ac770ad.chunk.js"
   ]
 }
